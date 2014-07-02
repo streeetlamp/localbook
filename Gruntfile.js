@@ -117,17 +117,6 @@ module.exports = function(grunt) {
             }
         },
 
-        // copy: {
-        //   main: {
-        //     expand: true,
-        //     src: 'app/dev/img/*',
-        //     dest: 'app/assets/img/',
-        //     flatten: true,
-        //     filter: 'isFile',
-        //   },
-        // },
-
-
         clean: {
             test: [
                 'app/assets/img/*' //uncomment to clean img dir too
@@ -151,10 +140,6 @@ module.exports = function(grunt) {
 
     // Images
     grunt.loadNpmTasks('grunt-contrib-imagemin');
-
-    // Copy
-    // this is a patch while imagemin remains busted 
-    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Clean
     grunt.loadNpmTasks('grunt-contrib-clean');
