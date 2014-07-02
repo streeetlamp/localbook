@@ -1,0 +1,751 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Main Stylesheet
+
+******************************************************************/
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Vender Stylesheet
+
+******************************************************************/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Color Constants
+
+******************************************************************/
+/*********************
+COLORS
+*********************/
+/******************************************************************
+
+Stylesheet: Normalize based on Normalize.scss and HTML5 Reset
+
+******************************************************************/
+/******************************************************************
+
+Stylesheet: Normalize HTML5 Reset
+
+******************************************************************/
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/* Apply a natural box layout model to all elements: http://paulirish.com/2012/box-sizing-border-box-ftw/ */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden], template {
+  display: none;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+/******************************************************************
+
+Stylesheet: Normalize Typography
+
+******************************************************************/
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  background: white;
+  color: #333333;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  overflow-y: scroll;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+a {
+  color: skyblue;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:hover, a:active {
+  outline: 0;
+  color: #60bee4;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+
+h6 {
+  font-size: 0.75em;
+  margin: 2.33em 0;
+}
+
+h1 a, h1 a:hover, .h1 a, .h1 a:hover, h2 a, h2 a:hover, .h2 a, .h2 a:hover, h3 a, h3 a:hover, .h3 a, .h3 a:hover, h4 a, h4 a:hover, .h4 a, .h4 a:hover, h5 a, h5 a:hover, .h5 a, .h5 a:hover {
+  color: #333333;
+  text-decoration: none;
+}
+
+hgroup {
+  margin-bottom: 0.75em;
+}
+
+p {
+  margin: 0 0 1.5em 0;
+  word-break: break-all;
+  word-break: break-word;
+  /* Non standard for webkit */
+  hyphens: auto;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+pre {
+  white-space: pre;
+  /* CSS2 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  white-space: pre-line;
+  /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word;
+  /* IE */
+}
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr, acronym {
+  border-bottom: 1px dotted #dddddd;
+  cursor: help;
+}
+
+address {
+  display: block;
+  margin: 0 0 0.75em;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+blockquote {
+  border-left: 2px solid #dddddd;
+  color: #595959;
+  margin: 1.5em 0;
+  padding-left: 0.75em;
+}
+
+cite {
+  color: #737373;
+  font-style: italic;
+}
+cite:before {
+  content: '\2014 \00A0';
+}
+
+/******************************************************************
+
+Stylesheet: Normalize Forms
+
+******************************************************************/
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  padding: 1em 2em;
+  color: white;
+  background: skyblue;
+}
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  background: #5bbce4;
+}
+
+fieldset {
+  border: 1px solid #dddddd;
+  background: #f7f7f7;
+  margin: 0 0 0.75em 0;
+  padding: 1.5em;
+}
+
+legend {
+  white-space: normal;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.375em;
+}
+label.required:after {
+  content: "*";
+}
+label abbr {
+  display: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+button,
+input {
+  line-height: normal;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+select {
+  width: auto;
+  max-width: 100%;
+  margin-bottom: 1.5em;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  cursor: pointer;
+  white-space: nowrap;
+  border: 0;
+}
+
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+textarea,
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
+select[multiple=multiple] {
+  background-color: white;
+  border: 1px solid #dddddd;
+  margin-bottom: 0.75em;
+  padding: 0.5em 0.5em;
+  transition: 0.2s;
+  width: 100%;
+  line-height: 1.5em;
+}
+textarea:hover,
+input[type="email"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="url"]:hover, input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="month"]:hover, input[type="time"]:hover, input[type="week"]:hover,
+select[multiple=multiple]:hover {
+  border-color: #eee;
+}
+textarea:focus,
+input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
+select[multiple=multiple]:focus {
+  border-color: #ddd;
+  outline: none;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+/******************************************************************
+
+Stylesheet: Normalize Lists
+
+******************************************************************/
+ul, ol {
+  margin: 0 0 0 1.25em;
+}
+
+dl dt {
+  font-weight: bold;
+}
+
+nav ul,
+nav ol {
+  margin: 0;
+  list-style: none;
+}
+
+/******************************************************************
+
+Stylesheet: Normalize Tables
+
+******************************************************************/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0.75em 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+th {
+  border-bottom: 1px solid #b7b7b7;
+  font-weight: bold;
+  padding: 0.75em 0;
+  text-align: left;
+}
+
+td {
+  border-bottom: 1px solid #dddddd;
+  padding: 0.75em 0;
+}
+
+tr, td, th {
+  vertical-align: middle;
+}
+
+/******************************************************************
+
+Stylesheet: Normalize Miscellaneous
+
+******************************************************************/
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+   If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
+img,
+object,
+embed {
+  max-width: 100%;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins & Constants Stylesheet
+
+******************************************************************/
+/*********************
+TOOLS
+*********************/
+.image-replacement {
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 0;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 1em;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Animations Stylesheet
+
+******************************************************************/
+@keyframes slideIn {
+  from {
+    margin-left: -100%;
+  }
+
+  to {
+    margin-left: 0;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInSlideDown {
+  from {
+    opacity: 0;
+    transform: translate(0, -10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translate(0, 10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Base Stylesheet
+
+******************************************************************/
+#main {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#main:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Import Modules Stylesheet
+
+******************************************************************/
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Header Stylesheet
+
+******************************************************************/
+.header__inner {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header__inner:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Navigation Stylesheet
+
+******************************************************************/
+@media only screen and (min-width: 1025px) {
+  .nav ul > li {
+    display: inline-block;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  #mobile-nav-button {
+    display: none;
+  }
+}
+
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Navigation Stylesheet
+
+******************************************************************/
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Footer Stylesheet
+
+******************************************************************/
+.footer {
+  background: #333333;
+  color: white;
+}
+.footer__inner {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em 0;
+}
+.footer__inner:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Print Stylesheet
+
+******************************************************************/
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+  a, a:visited {
+    color: #444 !important;
+    text-decoration: underline;
+  }
+  a:after, a:visited:after {
+    content: " (" attr(href) ")";
+  }
+  a abbr[title]:after, a:visited abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr, img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: .5cm;
+  }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  .sidebar,
+  nav {
+    display: none;
+  }
+}
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Shame Stylesheet
+
+Use this for testing
+
+******************************************************************/

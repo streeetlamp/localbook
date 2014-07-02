@@ -1,0 +1,70 @@
+/*********************
+PADDING TOOLS
+Add padding the size of columns
+*********************/
+
+@mixin fill-right($cols-to-pad: 1) {
+	@if $is-imp {
+		padding-right: percentage( 
+			100 / $inner-wrap-size //reset porportions
+			* ( (100 - (( ($total-cols / $cols-to-pad) - 1) * $gutter-width))
+			/ ($total-cols / $cols-to-pad)
+			+ $gutter-width )
+			/ 100
+		);
+	} @else {
+		padding-right: percentage( 
+			( (100 - (( ($total-cols / $cols-to-pad) - 1) * $gutter-width))
+			/ ($total-cols / $cols-to-pad)
+			+ $gutter-width )
+			/ 100
+		);
+	}
+}
+
+@mixin fill-left($cols-to-pad: 1) {
+	@if $is-imp {
+		padding-left: percentage( 
+			100 / $inner-wrap-size //reset porportions
+			* ( (100 - (( ($total-cols / $cols-to-pad) - 1) * $gutter-width))
+			/ ($total-cols / $cols-to-pad)
+			+ $gutter-width )
+			/ 100
+		);
+	} @else {
+		padding-left: percentage( 
+			( (100 - (( ($total-cols / $cols-to-pad) - 1) * $gutter-width))
+			/ ($total-cols / $cols-to-pad)
+			+ $gutter-width )
+			/ 100
+		);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

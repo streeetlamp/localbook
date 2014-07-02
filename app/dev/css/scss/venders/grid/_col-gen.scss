@@ -1,0 +1,106 @@
+/*********************
+COLUMN GENERATORS
+*********************/
+
+//column generator with inner wrap
+@mixin col-imp( $cols: $cols-spanned of $parent-size) {
+
+	$cols-spanned: nth($cols, 1);
+	$parent-size: parent-size($cols);
+
+	$is-imp: true;
+
+	@include width;
+
+	@if ($cols-before == 0) {
+		margin-left: 0;
+	}
+	@else {
+		margin-left: percentage( 
+			100 / $inner-wrap-size //reset porportions
+			* ( (100 - (( ($parent-size / $cols-before) - 1) * ($total-cols / $parent-size * $gutter-width)))
+			/ ($parent-size / $cols-before)
+			+ ($total-cols / $parent-size * $gutter-width) )
+			/ 100
+		);
+	}
+
+	@if $last {
+		float: right;
+		margin-right: percentage( 100 / $inner-wrap-size * ($inner-wrap-size - 100) /100 );
+	} @else {
+		float: left;
+		@if $seperate-with-padding != true {
+			@include gutter-margin-right;
+		}
+	}
+
+	@include gutter-margin-bottom;
+
+	$seperate-with-padding: false;
+	$last: false;
+	$cols-before: 0;
+
+}
+
+
+
+//explicit column generator 
+@mixin col( $cols: $cols-spanned of $parent-size) {
+
+	$cols-spanned: nth($cols, 1);
+	$parent-size: parent-size($cols);
+
+	$is-imp: false;
+
+	@include width;
+
+	@if $last {
+		float: right;
+		@if $cols-before == 0 {
+			margin-right: 0;
+		} @else {
+			margin-right: percentage( 
+				( (100 - (( ($parent-size / $cols-before) - 1) * ($total-cols / $parent-size * $gutter-width)))
+				/ ($parent-size / $cols-before)
+				+ ($total-cols / $parent-size * $gutter-width) )
+				/ 100
+			);
+		}
+
+		@if $seperate-with-padding {
+			@include gutter-padding-left;
+			margin-left: 0;
+		} @else if $inline {
+			@include gutter-margin-left;
+		} @else {
+			margin-left: 0;
+		}
+
+	} @else {
+		// float: left;
+
+		@if $seperate-with-padding != true {
+			@include gutter-margin-right;
+		}
+
+		@if ($cols-before == 0) {
+			margin-left: 0;
+		} @else {
+			margin-left: percentage( 
+				( (100 - (( ($parent-size / $cols-before) - 1) * ($total-cols / $parent-size * $gutter-width)))
+				/ ($parent-size / $cols-before)
+				+ ($total-cols / $parent-size * $gutter-width) )
+				/ 100
+			);
+		}
+	}
+
+	@include gutter-margin-bottom;
+
+	$seperate-with-padding: false;
+	$last: false;
+	$inline: false;
+	$cols-before: 0;
+
+}

@@ -1,0 +1,244 @@
+/******************************************************************
+
+Stylesheet: Normalize Typography
+
+******************************************************************/
+
+// Set these to be used across your stylesheets
+$sans-serif: sans-serif;
+$serif: serif;
+
+// Set the default font family here so you don't have to override it later
+$base-font-family: $sans-serif !default;
+$base-line-height: 1.5em;
+
+
+// Pretty text
+// may cause text heavy sites to run slow
+$pretty-text: false !default;
+$pretty-headers: true !default; //can be false if $pretty-text is true
+
+%pretty-text {
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+
+html {
+	background: $background;
+	color: $text-color;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	overflow-y: scroll;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+	margin: 0; // Webkit browsers add a 2px margin outside the chrome of form elements
+	font-family: $base-font-family;
+
+	@if $pretty-text == true {
+		@extend %pretty-text;
+	}
+}
+
+a {
+
+	color: $link-color;
+	// text-decoration: none;
+
+	&:focus {
+		outline: thin dotted;
+	}
+
+	&:hover,
+	&:active {
+		outline: 0;
+		color: $link-hover;
+	}
+}
+
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+h2 {
+	font-size: 1.5em;
+	margin: 0.83em 0;
+}
+
+h3 {
+	font-size: 1.17em;
+	margin: 1em 0;
+}
+
+h4 {
+	font-size: 1em;
+	margin: 1.33em 0;
+}
+
+h5 {
+	font-size: 0.83em;
+	margin: 1.67em 0;
+}
+
+h6 {
+	font-size: 0.75em;
+	margin: 2.33em 0;
+}
+
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+
+	@if $pretty-headers == true {
+		@extend %pretty-text;
+	}
+
+	a, a:hover {
+		color: $text-color;
+		text-decoration: none;
+	}
+}
+
+hgroup {
+	margin-bottom: $base-line-height / 2;
+}
+
+p {
+	margin: 0 0 $base-line-height 0;
+	word-break: break-all;
+	word-break: break-word; /* Non standard for webkit */
+	hyphens: auto;
+}
+
+// Addresses styling not present in IE 8/9, S5, Chrome
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+// Addresses style set to 'bolder' in FF3+, S4/5, Chrome
+
+b,
+strong {
+	font-weight: bold;
+}
+
+// Addresses styling not present in S5, Chrome
+
+dfn {
+	font-style: italic;
+}
+
+// Addresses styling not present in IE6/7/8/9
+
+mark {
+	background: #ff0;
+	color: #000;
+}
+
+
+// Corrects font family set oddly in IE6, S4/5, Chrome
+// en.wikipedia.org/wiki/User:Davidgothberg/Test59
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, serif;
+	font-size: 1em;
+}
+
+// Improves readability of pre-formatted text in all browsers
+
+pre {
+	white-space: pre; /* CSS2 */
+	white-space: pre-wrap; /* CSS 2.1 */
+	white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+	word-wrap: break-word; /* IE */
+}
+
+// Set consistent quote types.
+
+q {
+	quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+// Addresses quote property not supported in S4
+
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+// Address inconsistent and variable font size in all browsers.
+
+small {
+	font-size: 80%;
+}
+
+// Prevents sub and sup affecting line-height in all browsers
+// gist.github.com/413930
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted $base-border-color;
+	cursor: help;
+}
+
+address {
+	display: block;
+	margin: 0 0 ($base-line-height / 2);
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {
+    content: '';
+    content: none;
+}
+
+blockquote {
+	border-left: 2px solid $base-border-color;
+	color: lighten($text-color, 15);
+	margin: $base-line-height 0;
+	padding-left: $base-line-height / 2;
+}
+
+cite {
+	color: lighten($text-color, 25);
+	font-style: italic;
+
+	&:before {
+		content: '\2014 \00A0';
+	}
+}

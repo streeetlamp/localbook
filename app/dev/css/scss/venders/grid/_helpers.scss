@@ -1,0 +1,146 @@
+/*********************
+PARTENT SIZE HELPER
+gets parent size out of $cols argument in col and col-imp
+*********************/
+@function parent-size($cols){
+	@if length($cols) == 3 {
+		$parent-size: nth($cols, 3);
+		@return $parent-size;
+	} @else if length($cols) == 2 {
+		$parent-size: nth($cols, 2);
+		@return $parent-size;
+	} @else {
+		@return $total-cols;
+	}
+}
+
+
+/*********************
+SET VARIABLES MIXINS
+primes col, col-imp, and other mixins with the correct variables
+*********************/
+
+@mixin pad {
+	$seperate-with-padding: true;
+}
+
+@mixin last {
+	$last: true;
+}
+
+@mixin inline {
+	$inline: true;
+}
+
+@mixin shift($shift: 0) {
+	$cols-before: $shift;
+}
+
+
+/*********************
+WIDTH HELPER
+sets width of colums
+*********************/
+@mixin width {
+	@if $is-imp {
+		@if $seperate-with-padding {
+			width: percentage( 
+				100 / $inner-wrap-size //reset porportions
+				* (100 - (( ($parent-size / $cols-spanned) - 1) * ($total-cols / $parent-size * $gutter-width)))
+				/ ($parent-size / $cols-spanned)
+				/ 100
+				+ (100 / $inner-wrap-size * $gutter-width * $total-cols / $parent-size / 100 ) //add gutter witdth to total width
+			);
+		} @else {
+			width: percentage( 
+				100 / $inner-wrap-size //reset porportions
+				* (100 - (( ($parent-size / $cols-spanned) - 1) * ($total-cols / $parent-size * $gutter-width)))
+				/ ($parent-size / $cols-spanned)
+				/ 100
+			);
+		}
+	} @else {
+		@if $seperate-with-padding {
+			width: percentage( 
+				(100 - (( ($parent-size / $cols-spanned) - 1) * ($total-cols / $parent-size * $gutter-width)))
+				/ ($parent-size / $cols-spanned)
+				/ 100
+				+ ($gutter-width * $total-cols / $parent-size / 100 ) //add gutter witdth to total width
+			);
+		} @else {
+			width: percentage( 
+				(100 - (( ($parent-size / $cols-spanned) - 1) * ($total-cols / $parent-size * $gutter-width)))
+				/ ($parent-size / $cols-spanned)
+				/ 100
+			);
+		}
+	}
+}
+
+
+
+
+
+
+/*********************
+MARGINS AND PADDING HELPERS
+for elements you want to add margins or padding that match the gutter size
+*********************/
+
+@mixin gutter-margin-bottom($multiple: 1) {
+	@if $is-imp {
+		margin-bottom: 100 / $inner-wrap-size * $margin * $total-cols / $parent-size * $multiple;
+	} @else {
+		margin-bottom: $margin * $total-cols / $parent-size * $multiple;
+	}
+}
+@mixin gutter-margin-top($multiple: 1) {
+	@if $is-imp {
+		margin-top: 100 / $inner-wrap-size * $margin * $total-cols / $parent-size * $multiple;
+	} @else {
+		margin-top: $margin * $total-cols / $parent-size * $multiple;
+	}
+}
+@mixin gutter-margin-right {
+	@if $is-imp {
+		margin-right: percentage(100 / $inner-wrap-size * $gutter-width * $total-cols / $parent-size / 100);
+	} @else {
+		margin-right: percentage( $gutter-width * $total-cols / $parent-size / 100 );
+	}
+}
+@mixin gutter-margin-left {
+	@if $is-imp {
+		margin-left: percentage(100 / $inner-wrap-size * $gutter-width * $total-cols / $parent-size / 100);
+	} @else {
+		margin-left: percentage($gutter-width * $total-cols / $parent-size / 100 );
+	}
+}
+
+@mixin gutter-padding-bottom($multiple: 1) {
+	@if $is-imp {
+		padding-bottom: 100 / $inner-wrap-size * $margin * $total-cols / $parent-size * $multiple;
+	} @else {
+		padding-bottom: $margin * $total-cols / $parent-size * $multiple;
+	}
+}
+@mixin gutter-padding-top($multiple: 1) {
+	@if $is-imp {
+		padding-top: 100 / $inner-wrap-size * $margin * $total-cols / $parent-size * $multiple;
+	} @else {
+		padding-top: $margin * $total-cols / $parent-size * $multiple;
+	}
+}
+@mixin gutter-padding-right {
+	@if $is-imp {
+		padding-right: percentage(100 / $inner-wrap-size * $gutter-width * $total-cols / $parent-size / 100);
+	} @else {
+		padding-right: percentage($gutter-width * $total-cols / $parent-size / 100 );
+	}
+}
+@mixin gutter-padding-left {
+	@if $is-imp {
+		padding-left: percentage(100 / $inner-wrap-size * $gutter-width * $total-cols / $parent-size / 100);
+	} @else {
+		padding-left: percentage( $gutter-width * $total-cols / $parent-size / 100 );
+	}
+}
