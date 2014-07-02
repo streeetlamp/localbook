@@ -4,23 +4,11 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        // sass: {
-        //     dist: {
-        //         options: {
-        //             style: 'expanded',
-        //             require: 'susy'
-        //         },
-        //         files: {
-        //             'app/dev/css/build/style-sass.css': 'app/dev/css/scss/style.scss'
-        //         }
-        //     } 
-        // },
-
         compass: {
           dist: {
             options: {
-              cssDir: 'app/dev/css/build/css',
-              sassDir: 'app/dev/scss',
+              cssDir: 'app/dev/css/build',
+              sassDir: 'app/dev/css/scss',
               imagesDir: 'app/dev/css/img',
               javascriptsDir: 'app/dev/js',
               environment: 'development',
@@ -35,7 +23,7 @@ module.exports = function(grunt) {
         autoprefixer: {
             dist: {
                 files: {
-                    'app/dev/css/build/style-autoprefixed.css' : 'app/dev/css/build/style.css'
+                    'app/dev/css/build/style-autoprefixed.css' : 'app/dev/css/build/style-sass.css'
                 }
             }
         },
@@ -101,16 +89,19 @@ module.exports = function(grunt) {
         },
 
         watch: {
-            sass: {
-                files: ['app/dev/css/scss/**/*'],
-                tasks: ['sass', 'autoprefixer', 'cmq', 'cssmin']
+            scss: {
+                files: ['app/dev/css/scss/**/*.scss'],
+                tasks: ['default']
+            },
+            css: {
+                files: ['app/assets/css/**/*.css']
             },
             js: {
                 files: ['app/dev/js/**/*'],
                 tasks: ['concat', 'uglify']
             },
             livereload: {
-                files: ['app/**/*.html', 'app/**/*.php', 'app/**/*.js'], // add files to watch to trigger a reload
+                files: ['app/**/*.html', 'app/**/*.php', 'app/**/*.js', 'app/**/*.css'], // add files to watch to trigger a reload
                 options: { livereload: true }
             }
         },
@@ -126,13 +117,20 @@ module.exports = function(grunt) {
             }
         },
 
+        // copy: {
+        //   main: {
+        //     expand: true,
+        //     src: 'app/dev/img/*',
+        //     dest: 'app/assets/img/',
+        //     flatten: true,
+        //     filter: 'isFile',
+        //   },
+        // },
+
+
         clean: {
             test: [
-                'app/assets/js/*',
-                'app/dev/js/build/*',
-                'app/assets/css/*',
-                'app/dev/css/build/*',
-                // 'app/assets/img/*' //uncomment to clean img dir too
+                'app/assets/img/*' //uncomment to clean img dir too
             ]
         },
 
@@ -141,7 +139,7 @@ module.exports = function(grunt) {
     // 3. Where we tell Grunt we plan to use this plug-in.
 
     // Sass
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-combine-media-queries');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -154,10 +152,14 @@ module.exports = function(grunt) {
     // Images
     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
+    // Copy
+    // this is a patch while imagemin remains busted 
+    grunt.loadNpmTasks('grunt-contrib-copy');
+
     // Clean
     grunt.loadNpmTasks('grunt-contrib-clean');
-    
-    // Broswer Reload + File Watch
+   
+    // Browser Reload + File Watch
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
@@ -166,7 +168,7 @@ module.exports = function(grunt) {
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
 
     // cleans directories, does everything for css, js, and images for deploy
-    grunt.registerTask('prod', ['clean', 'sass', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify', 'imagemin']);
+    grunt.registerTask('prod', ['clean', 'img', 'compass', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify']);
 
     // runs Sass, autoprefixer, media query combine, and minify
     grunt.registerTask('css', ['watch:sass']); 
@@ -188,6 +190,6 @@ module.exports = function(grunt) {
     grunt.registerTask('delete', ['clean']); 
 
     // compiles sass once
-    grunt.registerTask('default', ['sass', 'autoprefixer', 'cmq', 'cssmin']); 
+    grunt.registerTask('default', ['compass', 'autoprefixer', 'cmq', 'cssmin']); 
 
 };
