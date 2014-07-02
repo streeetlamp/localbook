@@ -12,7 +12,7 @@ Stylesheet: Navigation Stylesheet
 
 		> li {
 
-			@include desktop-and-up {
+			@include breakpoint($breakpoint-768) {
 				display: inline-block;
 			}
 
@@ -39,7 +39,7 @@ Stylesheet: Navigation Stylesheet
 
 #mobile-nav-button {
 
-	@include desktop-and-up {
+	@include breakpoint($breakpoint-768) {
 		display: none;
 	}
 

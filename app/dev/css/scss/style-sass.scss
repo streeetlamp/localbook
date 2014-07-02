@@ -5,8 +5,7 @@ Author:
 Stylesheet: Main Stylesheet
 
 ******************************************************************/
-
-
+@import "compass";
 // venders
 
 @import "susy";
@@ -36,7 +35,7 @@ $wrapper-width: 1200px;
 @import "normalize/normalize";
 @import "mixins";
 @import "animations";
-@import "mediaQueries";
+@import "breakpoints";
 @import "base";
 @import "modules/modules";
 @import "print";

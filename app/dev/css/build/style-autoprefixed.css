@@ -785,14 +785,14 @@ Author:
 Stylesheet: Navigation Stylesheet
 
 ******************************************************************/
-@media only screen and (min-width: 1025px) {
+@media (min-width: 768px) {
   /* line 13, ../scss/modules/_nav.scss */
   .nav ul > li {
     display: inline-block;
   }
 }
 
-@media only screen and (min-width: 1025px) {
+@media (min-width: 768px) {
   /* line 40, ../scss/modules/_nav.scss */
   #mobile-nav-button {
     display: none;
