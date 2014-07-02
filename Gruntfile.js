@@ -4,22 +4,38 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        sass: {
-            dist: {
-                options: {
-                    style: 'expanded',
-                    require: 'susy'
-                },
-                files: {
-                    'app/dev/css/build/style-sass.css': 'app/dev/css/scss/style.scss'
-                }
-            } 
+        // sass: {
+        //     dist: {
+        //         options: {
+        //             style: 'expanded',
+        //             require: 'susy'
+        //         },
+        //         files: {
+        //             'app/dev/css/build/style-sass.css': 'app/dev/css/scss/style.scss'
+        //         }
+        //     } 
+        // },
+
+        compass: {
+          dist: {
+            options: {
+              cssDir: 'app/dev/css/build/css',
+              sassDir: 'app/dev/scss',
+              imagesDir: 'app/dev/css/img',
+              javascriptsDir: 'app/dev/js',
+              environment: 'development',
+              relativeAssets: true,
+              outputStyle: 'expanded',
+              raw: 'preferred_syntax = :scss\n',
+              require: ['susy','breakpoint']
+            }
+          }
         },
 
         autoprefixer: {
             dist: {
                 files: {
-                    'app/dev/css/build/style-autoprefixed.css' : 'app/dev/css/build/style-sass.css'
+                    'app/dev/css/build/style-autoprefixed.css' : 'app/dev/css/build/style.css'
                 }
             }
         },
@@ -35,14 +51,14 @@ module.exports = function(grunt) {
         cssmin: {
             combine: {
                 files: {
-                    'app/prod/assets/css/style.css': ['app/dev/css/build/cmq/style-autoprefixed.css']
+                    'app/assets/css/style.css': ['app/dev/css/build/cmq/style-autoprefixed.css']
                 }
             }
         },
 
         browserSync: {
             files: {
-                src : 'app/prod/assets/css/style.css'
+                src : 'app/assets/css/style.css'
             }
         },
 
@@ -76,11 +92,11 @@ module.exports = function(grunt) {
         uglify: {
             footer: {
                 src: 'app/dev/js/build/footer.js',
-                dest: 'app/prod/assets/js/footer.min.js'
+                dest: 'app/assets/js/footer.min.js'
             },
             header: {
                 src: 'app/dev/js/build/header.js',
-                dest: 'app/prod/assets/js/header.min.js'
+                dest: 'app/assets/js/header.min.js'
             }
         },
 
@@ -94,7 +110,7 @@ module.exports = function(grunt) {
                 tasks: ['concat', 'uglify']
             },
             livereload: {
-                files: ['app/prod/**/*.html', 'app/prod/**/*.php', 'app/prod/**/*.js'], // add files to watch to trigger a reload
+                files: ['app/**/*.html', 'app/**/*.php', 'app/**/*.js'], // add files to watch to trigger a reload
                 options: { livereload: true }
             }
         },
@@ -105,18 +121,18 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'app/dev/img/',
                     src: ['**/*.{png,jpg,gif,svg,ico}'],
-                    dest: 'app/prod/assets/img/'
+                    dest: 'app/assets/img/'
                 }]
             }
         },
 
         clean: {
             test: [
-                'app/prod/assets/js/*',
+                'app/assets/js/*',
                 'app/dev/js/build/*',
-                'app/prod/assets/css/*',
+                'app/assets/css/*',
                 'app/dev/css/build/*',
-                // 'app/prod/assets/img/*' //uncomment to clean img dir too
+                // 'app/assets/img/*' //uncomment to clean img dir too
             ]
         },
 
