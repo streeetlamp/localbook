@@ -3,11 +3,18 @@
 A moderate modification of @jpweller's boilerplate.
 
 ## How To: 
-
-1.  $bundle install ('$gem install bundler' if not installed yet)
-2.  npm install
-3.  grunt sync (for browser sync)
-4.  grunt watch
+```
+$bundle install ('$gem install bundler' if not installed yet)
+```
+```
+npm install
+```
+```
+grunt sync (for browser sync)
+```
+```
+grunt watch
+```
 
 ## To-Do's:
 
