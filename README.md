@@ -2,11 +2,18 @@
 
 A moderate modification of @jpweller's boilerplate.
 
-## TODOs:
+## How To: 
+
+1.  $bundle install ('$gem install bundler' if not installed yet)
+2.  npm install
+3.  grunt sync (for browser sync)
+4.  grunt watch
+
+## To-Do's:
 
 Adapt the variables in _mediaQueries.scss for breakpoint in _breakpoints.scss
 
-## known issues
+## Known Issues
 
 If grunt-contrib-imagmin fails to install properly because of pngquant see [issue](https://github.com/gruntjs/grunt-contrib-imagemin/issues/183/#issuecomment-41841391)
 
