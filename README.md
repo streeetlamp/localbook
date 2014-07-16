@@ -18,7 +18,8 @@ grunt watch
 
 ## To-Do's:
 
-Adapt the variables in _mediaQueries.scss for breakpoint in _breakpoints.scss
+* Adapt the variables in _mediaQueries.scss for breakpoint in _breakpoints.scss
+* Build a dist directory for final production. Dump everything in there so you can just upload that and be good to go
 
 ## Known Issues
 

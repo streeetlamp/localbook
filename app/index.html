@@ -292,16 +292,15 @@
 <script src="assets/js/footer.min.js"></script>
 
 
-<!-- DELETE SCRIPTS BELOW FOR PRODUCTION -->
+<!-- devcode: !production -->
+	<!-- scripts to reload browser on html changes -->
+	<script src="//localhost:35729/livereload.js"></script>
 
-<!-- scripts to reload browser on html changes -->
-<script src="//localhost:35729/livereload.js"></script>
-
-<!-- scripts to reload browser on css changes, replace with correct port numbers -->
-<script src='//10.70.12.76:3000/socket.io/socket.io.js'></script>
-<script>var ___socket___ = io.connect('http://10.70.12.76:3000');</script>
-<script src='//10.70.12.76:3001/client/browser-sync-client.0.8.2.js'></script>
-
+	<!-- scripts to reload browser on css changes, replace with correct port numbers -->
+	<script src='//10.70.12.76:3000/socket.io/socket.io.js'></script>
+	<script>var ___socket___ = io.connect('http://10.70.12.76:3000');</script>
+	<script src='//10.70.12.76:3001/client/browser-sync-client.0.8.2.js'></script>
+<!-- endcode -->
 
 </body>
 
