@@ -145,6 +145,20 @@ module.exports = function(grunt) {
           }
         },
 
+        replace: {
+          example: {
+            src: ['app/assets/css/style.css',],             // source files array (supports minimatch)
+            dest: 'app/assets/css/style.t4.css',             // destination directory or file
+            replacements: [{
+              from: '../img/logo-b-l.png',                   // string replacement
+              to: '<t4 type="media" id="90325" formatter="image/*"/>'
+            },{
+              from: '../img/logo-b-s.png',                   // string replacement
+              to: '<t4 type="media" id="90320" formatter="image/*"/>'
+            }]
+          }
+        },
+
 
     });
 
@@ -167,8 +181,9 @@ module.exports = function(grunt) {
     // Clean
     grunt.loadNpmTasks('grunt-contrib-clean');
 
-    // DevCode
+    // Text Replacements
     grunt.loadNpmTasks('grunt-devcode');
+    grunt.loadNpmTasks('grunt-text-replace');
    
     // Browser Reload + File Watch
     grunt.loadNpmTasks('grunt-concurrent');
@@ -202,5 +217,8 @@ module.exports = function(grunt) {
 
     // compiles sass once
     grunt.registerTask('default', ['compass', 'autoprefixer', 'cmq', 'cssmin']); 
+
+    // T4 template tags
+    grunt.registerTask('t4', ['grunt-text-replace']);
 
 };
