@@ -88,6 +88,22 @@ module.exports = function(grunt) {
             }
         },
 
+        htmlmin: {                                     // Task
+          dist: {                                      // Target
+            options: {                                 // Target options
+              removeComments: true,
+              collapseWhitespace: true
+            },
+            files: [{                                   // Dictionary of files
+                expand: true,     // Enable dynamic expansion.
+                cwd: 'app/',      // Src matches are relative to this path.
+                src: ['**/*.html'], // Actual pattern(s) to match.
+                dest: 'build/',   // Destination path prefix.
+                ext: '.html',   // Dest filepaths will have this extension.
+            }]
+          }
+        },
+
         watch: {
             scss: {
                 files: ['app/dev/css/scss/**/*.scss'],
@@ -172,6 +188,9 @@ module.exports = function(grunt) {
     // Images
     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
+    // html
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
+
     // Text Replacements
     grunt.loadNpmTasks('grunt-devcode');
     grunt.loadNpmTasks('grunt-text-replace');
@@ -185,7 +204,7 @@ module.exports = function(grunt) {
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
 
     // cleans directories, does everything for css, js, and images for deploy
-    grunt.registerTask('prod', ['img', 'compass', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify']);
+    grunt.registerTask('prod', ['img', 'compass', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify', 'htmlmin']);
 
     // runs Sass, autoprefixer, media query combine, and minify
     grunt.registerTask('css', ['watch:sass']); 
