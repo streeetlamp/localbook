@@ -1,6 +1,6 @@
 # Bread Pudding
 
-A moderate modification of @jpweller's boilerplate.
+Loosely based of @jpweller's boilerplate.
 
 ## How To: 
 ```
@@ -16,26 +16,21 @@ grunt sync (for browser sync)
 grunt watch
 ```
 
-## To-Do's:
-
-* Adapt the variables in _mediaQueries.scss for breakpoint in _breakpoints.scss
-* Build a dist directory for final production. Dump everything in there so you can just upload that and be good to go
-
 ## Known Issues
 
 If grunt-contrib-imagmin fails to install properly because of pngquant see [issue](https://github.com/gruntjs/grunt-contrib-imagemin/issues/183/#issuecomment-41841391)
 
 
 ```
-                          ____
-              .----------'    '-.
-             /  .      '     .   \\ *
-            /        '    .      /|
-           /      .             \ /
-          /  ' .       .     .  || |
-         /.___________    '    / //
-         |._          '------'| /|
-         '.............______.-' /  
-         |-.                  | /
-         `"""""""""""""-.....-'    *pudding
+                 ____
+     .----------'    '-.
+    /  .      '     .   \\ *
+   /        '    .      /|
+  /      .             \ /
+ /  ' .       .     .  || |
+/.___________    '    / //
+|._          '------'| /|
+'.............______.-' /  
+|-.                  | /
+`"""""""""""""-.....-'    *pudding
 ```
