@@ -23,7 +23,7 @@ module.exports = function(grunt) {
         autoprefixer: {
             dist: {
                 files: {
-                    'app/dev/css/build/style-autoprefixed.css' : 'app/dev/css/build/style-sass.css'
+                    'build/css/style.css' : 'app/css/style.css'
                 }
             }
         },
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
         cmq: {
             your_target: { 
                 files: {
-                    'app/dev/css/build/cmq' : 'app/dev/css/build/style-autoprefixed.css'
+                    'build/css/style.css' : 'build/css/style.css'
                 }
             }
         },
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         cssmin: {
             combine: {
                 files: {
-                    'app/assets/css/style.css': ['app/dev/css/build/cmq/style-autoprefixed.css']
+                    'build/css/style.css': ['build/css/style.css']
                 }
             }
         },
@@ -63,28 +63,28 @@ module.exports = function(grunt) {
         concat: {   
             footer: {
                 src: [
-                    'app/dev/js/footer/libs/*.js', // All JS in the libs folder
-                    'app/dev/js/footer/footer.js'  // This specific file
+                    'app/js/footer/libs/*.js', // All JS in the libs folder
+                    'app/js/footer/footer.js'  // This specific file
                 ],
-                dest: 'app/dev/js/build/footer.js',
+                dest: 'app/js/footer.js',
             },
             header: {
                 src: [
-                    'app/dev/js/header/libs/*.js', // All JS in the libs folder
-                    'app/dev/js/header/header.js'  // This specific file
+                    'app/js/header/libs/*.js', // All JS in the libs folder
+                    'app/js/header/header.js'  // This specific file
                 ],
-                dest: 'app/dev/js/build/header.js',
+                dest: 'app/js/header.js',
             }
         },
 
         uglify: {
             footer: {
-                src: 'app/dev/js/build/footer.js',
-                dest: 'app/assets/js/footer.min.js'
+                src: 'app/js/footer.js',
+                dest: 'build/js/footer.js'
             },
             header: {
-                src: 'app/dev/js/build/header.js',
-                dest: 'app/assets/js/header.min.js'
+                src: 'app/js/header.js',
+                dest: 'build/js/header.js'
             }
         },
 
@@ -110,17 +110,11 @@ module.exports = function(grunt) {
             dynamic: {
                 files: [{
                     expand: true,
-                    cwd: 'app/dev/img/',
+                    cwd: 'app/img/',
                     src: ['**/*.{png,jpg,gif,svg,ico}'],
-                    dest: 'app/assets/img/'
+                    dest: 'build/img/'
                 }]
             }
-        },
-
-        clean: {
-            test: [
-                'app/assets/img/*' //uncomment to clean img dir too
-            ]
         },
 
         devcode : {
@@ -134,7 +128,7 @@ module.exports = function(grunt) {
               open: 'devcode', // with this string we open a block of code
               close: 'endcode' // with this string we close a block of code
             },
-            dest: 'app'       // default destination which overwrittes environment variable
+            dest: 'app'       // default destination which overwrites environment variable
           },
           dist : {             // settings for task used with 'devcode:dist'
             options: {
@@ -191,7 +185,7 @@ module.exports = function(grunt) {
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
 
     // cleans directories, does everything for css, js, and images for deploy
-    grunt.registerTask('prod', ['clean', 'img', 'compass', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify']);
+    grunt.registerTask('prod', ['img', 'compass', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify']);
 
     // runs Sass, autoprefixer, media query combine, and minify
     grunt.registerTask('css', ['watch:sass']); 
