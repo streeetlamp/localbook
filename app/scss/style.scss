@@ -6,7 +6,6 @@ Stylesheet: Main Stylesheet
 
 ******************************************************************/
 @import "compass";
-// venders
 
 @import "susy";
 $susy: (
@@ -26,15 +25,9 @@ $susy: (
 
 $wrapper-width: 1200px;
 
-@import "venders/venders";
-
-
-// your styles
-
+@import "normalize";
 @import "colors";
-@import "normalize/normalize";
 @import "mixins";
-@import "animations";
 @import "breakpoints";
 @import "base";
 @import "modules/modules";
