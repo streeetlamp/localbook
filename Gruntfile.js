@@ -52,11 +52,11 @@ module.exports = function(grunt) {
 
         jshint: {
             all: [
-                'app/dev/js/footer/*.js',
-                'app/dev/js/header/*.js',
+                'app/js/footer/*.js',
+                'app/js/header/*.js',
             ],
             options: {
-                jshintrc: 'app/dev/js/.jshintrc'
+                jshintrc: 'app/js/.jshintrc'
             }
         },
 
@@ -106,14 +106,14 @@ module.exports = function(grunt) {
 
         watch: {
             scss: {
-                files: ['app/dev/css/scss/**/*.scss'],
+                files: ['app/scss/**/*.scss'],
                 tasks: ['default']
             },
             css: {
-                files: ['app/assets/css/**/*.css']
+                files: ['app/css/**/*.css']
             },
             js: {
-                files: ['app/dev/js/**/*'],
+                files: ['app/js/**/*'],
                 tasks: ['concat', 'uglify']
             },
             livereload: {
@@ -157,8 +157,8 @@ module.exports = function(grunt) {
 
         replace: {
           example: {
-            src: ['app/assets/css/style.css',],             // source files array (supports minimatch)
-            dest: 'app/assets/css/style.t4.css',             // destination directory or file
+            src: ['app/css/style.css',],             // source files array (supports minimatch)
+            dest: 'app/css/style.t4.css',             // destination directory or file
             replacements: [{
               from: '../img/logo-b-l.png',                   // string replacement
               to: '<t4 type="media" id="90325" formatter="image/*"/>'
