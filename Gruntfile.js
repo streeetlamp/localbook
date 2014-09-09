@@ -7,10 +7,10 @@ module.exports = function(grunt) {
         compass: {
           dist: {
             options: {
-              cssDir: 'app/dev/css/build',
-              sassDir: 'app/dev/css/scss',
-              imagesDir: 'app/dev/css/img',
-              javascriptsDir: 'app/dev/js',
+              cssDir: 'app/css',
+              sassDir: 'app/scss',
+              imagesDir: 'app/img',
+              javascriptsDir: 'app/js',
               environment: 'development',
               relativeAssets: true,
               outputStyle: 'expanded',
@@ -178,9 +178,6 @@ module.exports = function(grunt) {
     // Images
     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-    // Clean
-    grunt.loadNpmTasks('grunt-contrib-clean');
-
     // Text Replacements
     grunt.loadNpmTasks('grunt-devcode');
     grunt.loadNpmTasks('grunt-text-replace');
@@ -211,9 +208,6 @@ module.exports = function(grunt) {
 
     // opimizes images in dev and moves them to prod
     grunt.registerTask('img', ['imagemin']); 
-
-    // deletes all files in build directories (be careful with this one)
-    grunt.registerTask('delete', ['clean']); 
 
     // compiles sass once
     grunt.registerTask('default', ['compass', 'autoprefixer', 'cmq', 'cssmin']); 
