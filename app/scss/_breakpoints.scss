@@ -2,28 +2,9 @@
 // http://breakpoint-sass.com/
 // http://responsivedesign.is/develop/browser-feature-support/media-queries-for-common-device-breakpoints
 @import "breakpoint";
-
-$breakpoint-481: 481px;
-$breakpoint-768: 768px;
-$breakpoint-1030: 1030px;
-$breakpoint-1240: 1240px;
-$breakpoint-mobile: max-width 767px;
-$breakpoint-desktop: min-width 768px;
-
 $breakpoint-no-queries: false;
 $breakpoint-no-query-fallbacks: true;
 
-
-
-
-
-
-
-
-
-// Media Queries in Sass 3.2
-//
-// These mixins make media queries a breeze with Sass.
 // The media queries from mobile up until desktop all 
 // trigger at different points along the way
 //
@@ -37,7 +18,7 @@ $mq-mobile-portrait   : 320px !default;
 $mq-mobile-landscape  : 480px !default;
 $mq-tablet-portrait   : 768px !default;
 $mq-tablet-landscape  : 1024px !default;
-$mq-desktop       : 1382px !default;
+$mq-desktop           : 1382px !default;
 
 // Both portrait and landscape
 $mobile-only: max-width $mq-mobile-landscape;
@@ -93,10 +74,174 @@ $desktop-and-up: $mq-tablet-landscape + 1;
 $desktop-and-below: max-width $mq-desktop;
 
 // Everything larger than a landscape tablet but less than or equal to the desktop
-$desktop-only: (min-width : $mq-tablet-landscape + 1) $mq-desktop;
+$desktop-only: ($mq-tablet-landscape + 1) $mq-desktop;
 
 // Retina screens have a 1.5 pixel ratio, not 2
-$retina: (-webkit-min-device-pixel-ratio 1.5) (min-device-pixel-ratio 1.5);
+// $retina: (-webkit-min-device-pixel-ratio 1.5) (min-device-pixel-ratio 1.5);
 
 // PRINT STYLESHEET
 $print-style: print;
+
+
+
+
+
+.mobile-only{
+  @include breakpoint($mobile-only) {
+    color: red;
+  }
+}
+  
+.mobile-portrait-only{
+  @include breakpoint($mobile-portrait-only) {
+    color: red;
+  }
+}
+
+.mobile-portrait-and-below{
+    @include breakpoint($mobile-portrait-and-below) {
+    color: red;
+  }
+}
+
+.mobile-portrait-and-up{
+    @include breakpoint($mobile-portrait-and-up) {
+    color: red;
+  }
+}
+
+.mobile-landscape-only{
+  @include breakpoint($mobile-landscape-only) {
+    color: red;
+  }
+}
+
+.mobile-landscape-and-below{
+  @include breakpoint($mobile-landscape-and-below) {
+    color: red;
+  }
+}
+
+.mobile-landscape-and-up{
+  @include breakpoint($mobile-landscape-and-up) {
+    color: red;
+  }
+}
+
+.tablet-only{
+  @include breakpoint($tablet-only) {
+    color: red;
+  }
+}
+
+.tablet-portrait-only{
+  @include breakpoint($tablet-portrait-only) {
+    color: red;
+  }
+}
+
+.tablet-portrait-and-below{
+    @include breakpoint($tablet-portrait-and-below) {
+    color: red;
+  }
+}
+
+.tablet-portrait-and-up{
+  @include breakpoint($tablet-portrait-and-up) {
+    color: red;
+  }
+}
+
+.tablet-and-up{
+  @include breakpoint($tablet-and-up) {
+    color: red;
+  }
+}
+
+.tablet-landscape-only{
+  @include breakpoint($tablet-landscape-only) {
+    color: red;
+  }
+}
+
+.tablet-landscape-and-below{
+  @include breakpoint($tablet-landscape-and-below) {
+    color: red;
+  }
+}
+
+.tablet-landscape-and-up{
+  @include breakpoint($tablet-landscape-and-up) {
+    color: red;
+  }
+}
+
+.desktop-and-up{
+  @include breakpoint($desktop-and-up) {
+    color: red;
+  }
+}
+
+.desktop-and-below{
+  @include breakpoint($desktop-and-below) {
+    color: red;
+  }
+}
+
+.desktop-only{
+  @include breakpoint($desktop-only) {
+    color: red;
+  }
+}
+
+
+  // @include breakpoint($retina) {
+  //   content: "$retina";
+  // }
+.print-style:after{  
+  @include breakpoint($print-style) {
+    content: "$print-style";
+  }
+}
+
+
+
+// $mobile-only
+// $mobile-portrait-only
+// $mobile-portrait-and-below
+// $mobile-portrait-and-up
+// $mobile-landscape-only
+// $mobile-landscape-and-below
+// $mobile-landscape-and-up
+// $tablet-only
+// $tablet-portrait-only
+// $tablet-portrait-and-below
+// $tablet-portrait-and-up
+// $tablet-and-up
+// $tablet-landscape-only
+// $tablet-landscape-and-below
+// $tablet-landscape-and-up
+// $desktop-and-up
+// $desktop-and-below
+// $desktop-only
+// $retina
+// $print-style
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

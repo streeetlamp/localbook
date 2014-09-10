@@ -516,6 +516,139 @@ TOOLS
   height: 100%;
 }
 
+@media (max-width: 480px) {
+  /* line 89, ../scss/_breakpoints.scss */
+  .mobile-only {
+    color: red;
+  }
+}
+
+@media (max-width: 320px) {
+  /* line 95, ../scss/_breakpoints.scss */
+  .mobile-portrait-only {
+    color: red;
+  }
+}
+
+@media (max-width: 320px) {
+  /* line 101, ../scss/_breakpoints.scss */
+  .mobile-portrait-and-below {
+    color: red;
+  }
+}
+
+@media (min-width: 320px) {
+  /* line 107, ../scss/_breakpoints.scss */
+  .mobile-portrait-and-up {
+    color: red;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+  /* line 113, ../scss/_breakpoints.scss */
+  .mobile-landscape-only {
+    color: red;
+  }
+}
+
+@media (max-width: 480px) {
+  /* line 119, ../scss/_breakpoints.scss */
+  .mobile-landscape-and-below {
+    color: red;
+  }
+}
+
+@media (min-width: 321px) {
+  /* line 125, ../scss/_breakpoints.scss */
+  .mobile-landscape-and-up {
+    color: red;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  /* line 131, ../scss/_breakpoints.scss */
+  .tablet-only {
+    color: red;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  /* line 137, ../scss/_breakpoints.scss */
+  .tablet-portrait-only {
+    color: red;
+  }
+}
+
+@media (max-width: 768px) {
+  /* line 143, ../scss/_breakpoints.scss */
+  .tablet-portrait-and-below {
+    color: red;
+  }
+}
+
+@media (min-width: 481px) {
+  /* line 149, ../scss/_breakpoints.scss */
+  .tablet-portrait-and-up {
+    color: red;
+  }
+}
+
+@media (min-width: 481px) {
+  /* line 155, ../scss/_breakpoints.scss */
+  .tablet-and-up {
+    color: red;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* line 161, ../scss/_breakpoints.scss */
+  .tablet-landscape-only {
+    color: red;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* line 167, ../scss/_breakpoints.scss */
+  .tablet-landscape-and-below {
+    color: red;
+  }
+}
+
+@media (min-width: 769px) {
+  /* line 173, ../scss/_breakpoints.scss */
+  .tablet-landscape-and-up {
+    color: red;
+  }
+}
+
+@media (min-width: 1025px) {
+  /* line 179, ../scss/_breakpoints.scss */
+  .desktop-and-up {
+    color: red;
+  }
+}
+
+@media (max-width: 1382px) {
+  /* line 185, ../scss/_breakpoints.scss */
+  .desktop-and-below {
+    color: red;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1382px) {
+  /* line 191, ../scss/_breakpoints.scss */
+  .desktop-only {
+    color: red;
+  }
+}
+
+@media print {
+  /* line 201, ../scss/_breakpoints.scss */
+  .print-style:after {
+    content: "$print-style";
+  }
+}
+
 /******************************************************************
 Site Name: 
 Author: 
@@ -570,14 +703,14 @@ Author:
 Stylesheet: Navigation Stylesheet
 
 ******************************************************************/
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   /* line 13, ../scss/modules/_nav.scss */
   .nav ul > li {
     display: inline-block;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   /* line 40, ../scss/modules/_nav.scss */
   #mobile-nav-button {
     display: none;
