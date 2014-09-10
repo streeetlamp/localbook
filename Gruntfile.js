@@ -124,7 +124,7 @@ module.exports = function(grunt) {
             },
             js: {
                 files: ['app/js/**/*'],
-                tasks: ['concat', 'uglify']
+                tasks: ['concat']
             },
             html: {
                 files: ['app/include/**/*.html'],
