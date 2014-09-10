@@ -10,8 +10,10 @@ grunt compass
 grunt watch
 grunt sync
 ```
+Paste sync scripts into app/include/parts/dev-scripts.html
 
 Work in the `app` directory. 
+
 When ready for production use the prod task.
 
 ```bash
