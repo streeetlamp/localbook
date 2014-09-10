@@ -3,17 +3,18 @@
 Loosely based of @jpweller's boilerplate.
 
 ## How To: 
-```
-$bundle install ('$gem install bundler' if not installed yet)
-```
-```
+```bash
+bundle install
+
 npm install
-```
-```
-grunt sync (for browser sync)
-```
-```
+
+grunt compass
+
 grunt watch
+
+grunt sync
+
+#PROFIT?
 ```
 
 ## Known Issues

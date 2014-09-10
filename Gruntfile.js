@@ -15,7 +15,8 @@ module.exports = function(grunt) {
               relativeAssets: true,
               outputStyle: 'expanded',
               raw: 'preferred_syntax = :scss\n',
-              require: ['susy','breakpoint']
+              require: ['susy','breakpoint'],
+              watch: true
             }
           }
         },
@@ -105,10 +106,6 @@ module.exports = function(grunt) {
         },
 
         watch: {
-            scss: {
-                files: ['app/scss/**/*.scss'],
-                tasks: ['default']
-            },
             css: {
                 files: ['app/css/**/*.css']
             },
