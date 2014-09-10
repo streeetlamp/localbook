@@ -18,7 +18,7 @@ When ready for production use the prod task.
 grunt prod
 ```
 
-It will create a new `build` directory that is ready for deploment.
+It will create a new `build` directory that is ready for deployment.
 
 ## Known Issues
 
