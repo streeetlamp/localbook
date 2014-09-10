@@ -1,3 +1,4 @@
+<<<<<<< HEAD:app/demo.html
 <!doctype html>
 
 <!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
@@ -111,6 +112,10 @@
 
   </div>
 </header>
+=======
+include "head.html"
+include "header.html"
+>>>>>>> 490dff5fec0e78ecebd6690a9fd17d9cfd4f3fc7:app/include/index.html
 
 <div id="main">
   <article class="article">
@@ -304,27 +309,4 @@
 
 </div>
 
-<footer class="footer">
-  <div class="footer__inner">
-    <small class="copyright">&copy; 2014 Site Title</small>
-  </div>
-</footer>
-
-
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="js/footer.min.js"></script>
-
-
-<!-- devcode: !production -->
-  <!-- scripts to reload browser on html changes -->
-  <script src="//localhost:35729/livereload.js"></script>
-
-  <!-- scripts to reload browser on css changes, replace with correct port numbers -->
-  <script src='//10.70.12.76:3000/socket.io/socket.io.js'></script>
-  <script>var ___socket___ = io.connect('http://10.70.12.76:3000');</script>
-  <script src='//10.70.12.76:3001/client/browser-sync-client.0.8.2.js'></script>
-<!-- endcode -->
-
-</body>
-
-</html>
+include "footer.html"
