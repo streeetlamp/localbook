@@ -5,17 +5,20 @@ Loosely based of @jpweller's boilerplate.
 ## How To: 
 ```bash
 bundle install
-
 npm install
-
 grunt compass
-
 grunt watch
-
 grunt sync
-
-#PROFIT?
 ```
+
+Work in the `app` directory. 
+When ready for production use the prod task.
+
+```bash
+grunt prod
+```
+
+It will create a new `build` directory that is ready for deploment.
 
 ## Known Issues
 
