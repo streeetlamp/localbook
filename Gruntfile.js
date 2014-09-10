@@ -111,7 +111,7 @@ module.exports = function(grunt) {
             },
             js: {
                 files: ['app/js/**/*'],
-                tasks: ['concat', 'uglify']
+                tasks: ['concat']
             },
             livereload: {
                 files: ['app/**/*.html', 'app/**/*.php', 'app/**/*.js', 'app/**/*.css'], // add files to watch to trigger a reload
