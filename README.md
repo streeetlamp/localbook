@@ -10,7 +10,7 @@ grunt compass
 grunt watch
 grunt sync
 ```
-Paste sync scripts into app/include/parts/dev-scripts.html
+Paste sync scripts into `app/include/parts/dev-scripts.html`
 
 Work in the `app` directory. 
 
