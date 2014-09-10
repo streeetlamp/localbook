@@ -1,4 +1,13 @@
+# ignore all node modules
 node_modules/
+
+# ignore sass cache files
 .sass-cache/
 .DS_Store
+
+# ignore generated files
 build/
+app/*.html
+
+#ignore development scripts for reload and sync
+app/include/parts/dev-scripts.html
