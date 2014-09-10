@@ -81,11 +81,11 @@ module.exports = function(grunt) {
         uglify: {
             footer: {
                 src: 'app/js/footer.js',
-                dest: 'build/js/footer.js'
+                dest: 'app/build/js/footer.js'
             },
             header: {
                 src: 'app/js/header.js',
-                dest: 'build/js/header.js'
+                dest: 'app/build/js/header.js'
             }
         },
 
@@ -105,6 +105,19 @@ module.exports = function(grunt) {
           }
         },
 
+        // Build the site using grunt-includes
+        includes: {
+          build: {
+            cwd: 'app/include',
+            src: [ '*.html' ],
+            dest: 'app/',
+            options: {
+              flatten: true,
+              includePath: 'app/include/parts'
+            }
+          }
+        },
+
         watch: {
             css: {
                 files: ['app/css/**/*.css']
@@ -112,6 +125,10 @@ module.exports = function(grunt) {
             js: {
                 files: ['app/js/**/*'],
                 tasks: ['concat', 'uglify']
+            },
+            html: {
+                files: ['app/include/**/*.html'],
+                tasks: ['includes']
             },
             livereload: {
                 files: ['app/**/*.html', 'app/**/*.php', 'app/**/*.js', 'app/**/*.css'], // add files to watch to trigger a reload
@@ -187,6 +204,7 @@ module.exports = function(grunt) {
 
     // html
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-includes');
 
     // Text Replacements
     grunt.loadNpmTasks('grunt-devcode');
