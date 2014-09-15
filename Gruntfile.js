@@ -219,27 +219,14 @@ module.exports = function(grunt) {
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
 
+    // compiles sass once
+    grunt.registerTask('default', ['compass:dist', 'autoprefixer', 'cmq', 'cssmin']); 
+
     // cleans directories, does everything for css, js, and images for deploy
-    grunt.registerTask('prod', ['img', 'compass:dist', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify', 'htmlmin']);
-
-    // runs Sass, autoprefixer, media query combine, and minify
-    grunt.registerTask('css', ['watch:sass']); 
-
-    // combines and minifies js on js changes
-    grunt.registerTask('js', ['watch:js']); 
-
-    // reloads on any html or php changes
-    // you can add more files to watch in the settings
-    grunt.registerTask('reload', ['watch:livereload']); 
+    grunt.registerTask('prod', ['includes','imagemin', 'compass:dist', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify', 'htmlmin']);
 
     // injects new css into open page on css change
     grunt.registerTask('sync', ['browserSync']); 
-
-    // opimizes images in dev and moves them to prod
-    grunt.registerTask('img', ['imagemin']); 
-
-    // compiles sass once
-    grunt.registerTask('default', ['compass:dist', 'autoprefixer', 'cmq', 'cssmin']); 
 
     // T4 template tags
     grunt.registerTask('t4', ['grunt-text-replace']);
