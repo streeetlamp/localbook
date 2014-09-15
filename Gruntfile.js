@@ -53,8 +53,7 @@ module.exports = function(grunt) {
 
         jshint: {
             all: [
-                'app/js/footer/*.js',
-                'app/js/header/*.js',
+                'app/js/*.js'
             ],
             options: {
                 jshintrc: 'app/js/.jshintrc'
@@ -62,30 +61,19 @@ module.exports = function(grunt) {
         },
 
         concat: {   
-            footer: {
+            scripts: {
                 src: [
-                    'app/js/footer/libs/*.js', // All JS in the libs folder
-                    'app/js/footer/footer.js'  // This specific file
+                    'app/js/scripts/libs/*.js', // All JS in the libs folder
+                    'app/js/scripts/scripts.js'  // This specific file
                 ],
-                dest: 'app/js/footer.js',
-            },
-            header: {
-                src: [
-                    'app/js/header/libs/*.js', // All JS in the libs folder
-                    'app/js/header/header.js'  // This specific file
-                ],
-                dest: 'app/js/header.js',
+                dest: 'app/js/main.js',
             }
         },
 
         uglify: {
-            footer: {
-                src: 'app/js/footer.js',
-                dest: 'app/build/js/footer.js'
-            },
-            header: {
-                src: 'app/js/header.js',
-                dest: 'app/build/js/header.js'
+            scripts: {
+                src: 'app/js/main.js',
+                dest: 'build/js/main.js'
             }
         },
 
