@@ -15,6 +15,19 @@ module.exports = function(grunt) {
               relativeAssets: true,
               outputStyle: 'expanded',
               raw: 'preferred_syntax = :scss\n',
+              require: ['susy','breakpoint']
+            }
+          },
+          watch: {
+            options: {
+              cssDir: 'app/css',
+              sassDir: 'app/scss',
+              imagesDir: 'app/img',
+              javascriptsDir: 'app/js',
+              environment: 'development',
+              relativeAssets: true,
+              outputStyle: 'expanded',
+              raw: 'preferred_syntax = :scss\n',
               require: ['susy','breakpoint'],
               watch: true
             }
@@ -207,7 +220,7 @@ module.exports = function(grunt) {
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
 
     // cleans directories, does everything for css, js, and images for deploy
-    grunt.registerTask('prod', ['img', 'compass', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify', 'htmlmin']);
+    grunt.registerTask('prod', ['img', 'compass:dist', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify', 'htmlmin']);
 
     // runs Sass, autoprefixer, media query combine, and minify
     grunt.registerTask('css', ['watch:sass']); 
@@ -226,7 +239,7 @@ module.exports = function(grunt) {
     grunt.registerTask('img', ['imagemin']); 
 
     // compiles sass once
-    grunt.registerTask('default', ['compass', 'autoprefixer', 'cmq', 'cssmin']); 
+    grunt.registerTask('default', ['compass:dist', 'autoprefixer', 'cmq', 'cssmin']); 
 
     // T4 template tags
     grunt.registerTask('t4', ['grunt-text-replace']);
