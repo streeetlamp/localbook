@@ -9,30 +9,47 @@ module.exports = function(grunt) {
             options: {
               cssDir: 'app/css',
               sassDir: 'app/scss',
-              imagesDir: 'app/img',
-              javascriptsDir: 'app/js',
               environment: 'development',
               relativeAssets: true,
               outputStyle: 'expanded',
               raw: 'preferred_syntax = :scss\n',
               require: ['susy','breakpoint']
             }
-          },
-          watch: {
-            options: {
-              cssDir: 'app/css',
-              sassDir: 'app/scss',
-              imagesDir: 'app/img',
-              javascriptsDir: 'app/js',
-              environment: 'development',
-              relativeAssets: true,
-              outputStyle: 'expanded',
-              raw: 'preferred_syntax = :scss\n',
-              require: ['susy','breakpoint'],
-              watch: true
-            }
           }
         },
+
+        watch: {
+            scss: {
+              files: ['app/scss/**/*.scss'],
+              tasks: ['compass']
+            },
+            css: {
+                files: ['app/css/**/*.css']
+            },
+            js: {
+                files: ['app/js/**/*'],
+                tasks: ['concat']
+            },
+            html: {
+                files: ['app/include/**/*.html'],
+                tasks: ['includes']
+            },
+            livereload: {
+                files: ['app/**/*.html', 'app/**/*.php', 'app/**/*.js', 'app/**/*.css'],
+                options: { livereload: true }
+            }
+        },
+
+
+        browserSync: {
+            bsFiles: {
+                src : 'app/css/style.css'
+            },
+            options: {
+                watchTask: true // < VERY important
+            }
+        },
+
 
         autoprefixer: {
             dist: {
@@ -55,12 +72,6 @@ module.exports = function(grunt) {
                 files: {
                     'build/css/style.css': ['build/css/style.css']
                 }
-            }
-        },
-
-        browserSync: {
-            files: {
-                src : 'app/assets/css/style.css'
             }
         },
 
@@ -119,24 +130,6 @@ module.exports = function(grunt) {
           }
         },
 
-        watch: {
-            css: {
-                files: ['app/css/**/*.css']
-            },
-            js: {
-                files: ['app/js/**/*'],
-                tasks: ['concat']
-            },
-            html: {
-                files: ['app/include/**/*.html'],
-                tasks: ['includes']
-            },
-            livereload: {
-                files: ['app/**/*.html', 'app/**/*.php', 'app/**/*.js', 'app/**/*.css'], // add files to watch to trigger a reload
-                options: { livereload: true }
-            }
-        },
-
         imagemin: {
             dynamic: {
                 files: [{
@@ -184,6 +177,15 @@ module.exports = function(grunt) {
           }
         },
 
+        concurrent: {
+            watch: {
+                tasks: ['watch', 'compass', 'browserSync'],
+                options: {
+                    logConcurrentOutput: true
+                }
+            }
+        },
+
 
     });
 
@@ -220,13 +222,10 @@ module.exports = function(grunt) {
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
 
     // compiles sass once
-    grunt.registerTask('default', ['compass:dist', 'autoprefixer', 'cmq', 'cssmin']); 
+    grunt.registerTask('default', ['browserSync','watch']); 
 
     // cleans directories, does everything for css, js, and images for deploy
     grunt.registerTask('prod', ['includes','imagemin', 'compass:dist', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify', 'htmlmin']);
-
-    // injects new css into open page on css change
-    grunt.registerTask('sync', ['browserSync']); 
 
     // T4 template tags
     grunt.registerTask('t4', ['grunt-text-replace']);
