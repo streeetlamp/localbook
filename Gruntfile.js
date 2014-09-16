@@ -32,7 +32,7 @@ module.exports = function(grunt) {
             },
             html: {
                 files: ['app/include/**/*.html'],
-                tasks: ['includes']
+                tasks: ['includes:dev']
             },
             livereload: {
                 files: ['app/**/*.html', 'app/**/*.php', 'app/**/*.js', 'app/**/*.css'],
@@ -109,7 +109,7 @@ module.exports = function(grunt) {
             },
             files: [{                                   // Dictionary of files
                 expand: true,     // Enable dynamic expansion.
-                cwd: 'app/',      // Src matches are relative to this path.
+                cwd: 'build/',      // Src matches are relative to this path.
                 src: ['**/*.html'], // Actual pattern(s) to match.
                 dest: 'build/',   // Destination path prefix.
                 ext: '.html',   // Dest filepaths will have this extension.
@@ -119,10 +119,19 @@ module.exports = function(grunt) {
 
         // Build the site using grunt-includes
         includes: {
-          build: {
+          dev: {
             cwd: 'app/include',
             src: [ '*.html' ],
             dest: 'app/',
+            options: {
+              flatten: true,
+              includePath: 'app/include/parts'
+            }
+          },
+          build: {
+            cwd: 'app/include',
+            src: [ '*.html' ],
+            dest: 'build/',
             options: {
               flatten: true,
               includePath: 'app/include/parts'
@@ -152,12 +161,12 @@ module.exports = function(grunt) {
               open: 'devcode', // with this string we open a block of code
               close: 'endcode' // with this string we close a block of code
             },
-            dest: 'app'       // default destination which overwrites environment variable
+            dest: 'dist'       // default destination which overwrites environment variable
           },
           dist : {             // settings for task used with 'devcode:dist'
             options: {
-                source: 'app/',
-                dest: 'app/',
+                source: 'build/',
+                dest: 'build/',
                 env: 'production'
             }
           }
@@ -225,7 +234,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['browserSync','watch']); 
 
     // cleans directories, does everything for css, js, and images for deploy
-    grunt.registerTask('prod', ['includes','imagemin', 'compass:dist', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify', 'htmlmin']);
+    grunt.registerTask('prod', ['includes','imagemin', 'compass:dist', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify','includes:build','devcode:dist','htmlmin']);
 
     // T4 template tags
     grunt.registerTask('t4', ['grunt-text-replace']);
