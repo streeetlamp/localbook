@@ -6,9 +6,7 @@ Loosely based of @jpweller's boilerplate.
 ```bash
 bundle install
 npm install
-grunt compass
-grunt watch
-grunt sync
+grunt
 ```
 Paste sync scripts into `app/include/parts/dev-scripts.html`
 
