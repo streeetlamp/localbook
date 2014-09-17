@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name: VCUbar
-Author: https://github.com/VCUarts
+Site Name: 
+Author: 
 
 Stylesheet: Main Stylesheet
 
@@ -442,8 +442,8 @@ th {
 }
 
 /******************************************************************
-Site Name: VCUbar
-Author: https://github.com/VCUarts
+Site Name:
+Author:
 
 Stylesheet: Color Constants
 
@@ -452,8 +452,8 @@ Stylesheet: Color Constants
 COLORS
 *********************/
 /******************************************************************
-Site Name: VCUbar
-Author: https://github.com/VCUarts
+Site Name:
+Author:
 
 Stylesheet: Mixins & Constants Stylesheet
 
@@ -517,8 +517,8 @@ TOOLS
 }
 
 /******************************************************************
-Site Name: VCUbar
-Author: https://github.com/VCUarts
+Site Name: 
+Author: 
 
 Stylesheet: Base Stylesheet
 
@@ -534,89 +534,6 @@ Stylesheet: Base Stylesheet
   content: " ";
   display: block;
   clear: both;
-}
-
-/* line 27, ../scss/_base.scss */
-.vcubar.absolute.light {
-  background: white;
-  border-top: 3px solid #aab2b1;
-  border-bottom: 3px solid #aab2b1;
-}
-/* line 33, ../scss/_base.scss */
-.vcubar.absolute.dark {
-  background: black;
-  border-top: 3px solid black;
-  border-bottom: 3px solid black;
-}
-/* line 39, ../scss/_base.scss */
-.vcubar.absolute .inner-vcubar {
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 2em;
-  position: relative;
-}
-/* line 12, ../../../../.rvm/gems/ruby-2.0.0-p247/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
-.vcubar.absolute .inner-vcubar:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-/* line 45, ../scss/_base.scss */
-.vcubar.absolute a {
-  display: block;
-  height: 2em;
-  position: relative;
-}
-/* line 50, ../scss/_base.scss */
-.vcubar.absolute a.vcu {
-  width: 391px;
-  height: auto;
-}
-/* line 55, ../scss/_base.scss */
-.vcubar.absolute a.vcu:hover .monotone {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-}
-/* line 60, ../scss/_base.scss */
-.vcubar.absolute a.vcu:hover .color {
-  opacity: 1.0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: alpha(opacity=100);
-}
-/* line 68, ../scss/_base.scss */
-.vcubar.absolute a.vcuarts {
-  width: 96px;
-  height: auto;
-  float: right;
-}
-/* line 74, ../scss/_base.scss */
-.vcubar.absolute a.vcuarts:hover .monotone {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-}
-/* line 79, ../scss/_base.scss */
-.vcubar.absolute a.vcuarts:hover .color {
-  opacity: 1.0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: alpha(opacity=100);
-}
-/* line 87, ../scss/_base.scss */
-.vcubar.absolute a img {
-  position: absolute;
-}
-/* line 92, ../scss/_base.scss */
-.vcubar.absolute .color {
-  opacity: 0;
-  transition: opacity .15s ease-in-out;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-}
-/* line 98, ../scss/_base.scss */
-.vcubar.absolute .monotone {
-  transition: opacity .15s ease-in-out;
 }
 
 /******************************************************************
@@ -683,7 +600,7 @@ Stylesheet: Footer Stylesheet
 ******************************************************************/
 /* line 9, ../scss/modules/_footer.scss */
 .footer {
-  background: black;
+  background: #333333;
   color: white;
 }
 /* line 14, ../scss/modules/_footer.scss */
@@ -701,8 +618,8 @@ Stylesheet: Footer Stylesheet
 }
 
 /******************************************************************
-Site Name: VCUbar
-Author: https://github.com/VCUarts
+Site Name:
+Author:
 
 Stylesheet: Print Stylesheet
 
@@ -781,8 +698,8 @@ Stylesheet: Print Stylesheet
   }
 }
 /******************************************************************
-Site Name: VCUbar
-Author: https://github.com/VCUarts
+Site Name:
+Author:
 
 Stylesheet: Shame Stylesheet
 
