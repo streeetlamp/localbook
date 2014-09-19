@@ -46,7 +46,10 @@ module.exports = function(grunt) {
                 src : 'app/css/style.css'
             },
             options: {
-                watchTask: true // < VERY important
+                watchTask: true, // < VERY important
+                server: {
+                    baseDir: "./"
+                }
             }
         },
 

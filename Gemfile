@@ -2,6 +2,6 @@
 source "https://rubygems.org"
 
 gem 'susy', '~>2.1.2'
-gem 'breakpoint', '~>2.4.2'
-gem 'sass', '~>3.3.10'
-gem 'compass', '~>1.0.0.alpha.20'
+gem 'breakpoint', '~>2.5.0'
+gem 'sass', '~>3.4.4'
+gem 'compass', '~>1.0.1'

@@ -600,8 +600,8 @@ Stylesheet: Footer Stylesheet
 ******************************************************************/
 /* line 9, ../scss/modules/_footer.scss */
 .footer {
-  background: #333333;
-  color: white;
+  background: #333;
+  color: #fff;
 }
 /* line 14, ../scss/modules/_footer.scss */
 .footer__inner {
