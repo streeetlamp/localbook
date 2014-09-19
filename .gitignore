@@ -10,4 +10,4 @@ build/
 app/*.html
 
 #ignore development scripts for reload and sync
-#app/include/parts/dev-scripts.html
+app/include/parts/dev-scripts.html
