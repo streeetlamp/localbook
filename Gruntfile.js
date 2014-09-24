@@ -48,7 +48,7 @@ module.exports = function(grunt) {
             options: {
                 watchTask: true, // < VERY important
                 server: {
-                    baseDir: "./"
+                    baseDir: "./app/"
                 }
             }
         },
