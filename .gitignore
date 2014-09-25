@@ -1,6 +1,9 @@
 # ignore all node modules
 node_modules/
 
+# ignore debug logs
+npm-debug.log
+
 # ignore sass cache files
 .sass-cache/
 .DS_Store
@@ -9,6 +12,3 @@ node_modules/
 build/
 app/*.html
 app/css/
-
-#ignore development scripts for reload and sync
-app/include/parts/dev-scripts.html
