@@ -1,21 +1,118 @@
 /******************************************************************
-Site Name: 
-Author: 
-
-Stylesheet: Base Stylesheet
-
+STYLIN ON U
 ******************************************************************/
 
+
 html {
-
+  background: #F5F5F5;
 }
-
 body {
-
+  max-width: 650px;
+  margin: 0 auto;
+  margin-top: 40px;
 }
-
-#main {
-
-	@include container($wrapper-width);
-	
+.editor, .entry-content {
+  background: white;
+  padding: 10px 20px;
+  border: 1px solid #EEE;
+  border-radius: 2px;
+}
+.saved-title {
+  margin-top: 60px;
+}
+.text-title {
+  width: 100%;
+  border: 1px solid #EEE;
+  box-sizing: border-box;
+  padding: 20px 10px;
+  margin-top: 40px;
+}
+button.save[disabled], button.save[disabled]:hover {
+  background:#CCC;
+  border: 1px solid #BBB;
+}
+button.save {
+  width: 100%;
+  background: #59A8DC;
+  color: white;
+  padding: 20px 0;
+  transition: background .2s ease;
+  font-size: 20px;
+  border: 1px solid #559ECF;
+}
+button.save:hover {
+  background: #559ECF;
+}
+button.entry {
+  background: white;
+  border: 1px solid #EEE;
+  color: #59A8DC;
+  padding: 5px 10px;
+  margin: 0 10px;
+  transition: background .2s ease;
+}
+button.entry:first-of-type {
+  margin: 0 10px 0 0;
+}
+button.entry:hover {
+  background: #F5F5F5;
+}
+.entry-content {
+  position: relative;
+  margin-top: 25px;
+}
+button.edit {
+  background: #59A8DC;
+  border-radius: 100%;
+  position: absolute;
+  right: 50px;
+  top: 15px;
+  color: white;
+  transition: background .2s ease;
+  border: 1px solid #559ECF;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 0;
+  font-size: 1em;
+}
+button.edit:hover {
+  background: #559ECF;
+}
+button.close {
+  background: #59A8DC;
+  border-radius: 100%;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: white;
+  transition: background .2s ease;
+  border: 1px solid #559ECF;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 0;
+}
+button.close:hover {
+  background: #559ECF;
+}
+button.delete {
+  background: #FC6168;
+  border: none;
+  color: white;
+  padding: 6px 8px 4px 8px;
+  font-size: 10px;
+  transition: background .2s ease;
+  letter-spacing: .125em;
+}
+button.delete:hover {
+  background: #943D46;
+}
+.save-alert {
+  width: 100%;
+  text-align: center;
+  background: #FC6168;
+  padding: 10px 0;
+  color: white;
+  display: none;
 }
