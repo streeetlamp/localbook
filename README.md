@@ -4,7 +4,7 @@ Text styling functionality provided via [jquery-notebook](https://github.com/rap
 Structure and Grunt boilerplate stuff via [Bread Pudding](https://github.com/VCUarts/bp)
 
 ## Demo: 
-Live demo is located [here](http://backpacklab.me/notebook/)
+Live demo is located [here](http://backpacklab.me/localbook/)
 
 ## How To: 
 ```bash
