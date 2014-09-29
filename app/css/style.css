@@ -639,9 +639,92 @@ Author:
 Stylesheet: Color Constants
 
 ******************************************************************/
-/*********************
-COLORS
-*********************/
+/******************************************************************
+BUTTONS - FOR CLICKING 
+******************************************************************/
+/* line 5, ../scss/_buttons.scss */
+button.save {
+  width: 100%;
+  background: #59A8DC;
+  color: white;
+  padding: 20px 0;
+  transition: background .2s ease;
+  font-size: 20px;
+  border: 1px solid #2f92d3;
+}
+/* line 13, ../scss/_buttons.scss */
+button.save:hover {
+  background: #2f92d3;
+}
+/* line 16, ../scss/_buttons.scss */
+button.save[disabled] {
+  background: #CCC;
+  border: 1px solid #BBB;
+}
+
+/* line 22, ../scss/_buttons.scss */
+button.entry {
+  background: white;
+  border: 1px solid #EEE;
+  color: #59A8DC;
+  padding: 5px 10px;
+  margin: 0 10px;
+  transition: background .2s ease;
+}
+/* line 29, ../scss/_buttons.scss */
+button.entry:first-of-type {
+  margin: 0 10px 0 0;
+}
+/* line 32, ../scss/_buttons.scss */
+button.entry:hover {
+  background: #F5F5F5;
+}
+
+/* line 37, ../scss/_buttons.scss */
+button.edit, button.close {
+  background: #59A8DC;
+  border-radius: 100%;
+  position: absolute;
+  color: white;
+  transition: background .2s ease;
+  border: 1px solid #2f92d3;
+  text-align: center;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+}
+/* line 48, ../scss/_buttons.scss */
+button.edit:hover, button.close:hover {
+  background: #2f92d3;
+}
+
+/* line 53, ../scss/_buttons.scss */
+button.edit {
+  right: 50px;
+  top: 15px;
+}
+
+/* line 58, ../scss/_buttons.scss */
+button.close {
+  right: 15px;
+  top: 15px;
+}
+
+/* line 64, ../scss/_buttons.scss */
+button.delete {
+  background: #FC6168;
+  border: none;
+  color: white;
+  padding: 6px 8px 4px 8px;
+  font-size: 10px;
+  transition: background .2s ease;
+  letter-spacing: .125em;
+}
+/* line 72, ../scss/_buttons.scss */
+button.delete:hover {
+  background: #fb2f38;
+}
+
 /******************************************************************
 STYLIN ON U
 ******************************************************************/
@@ -680,113 +763,12 @@ body {
 }
 
 /* line 30, ../scss/_base.scss */
-button.save[disabled], button.save[disabled]:hover {
-  background: #CCC;
-  border: 1px solid #BBB;
-}
-
-/* line 34, ../scss/_base.scss */
-button.save {
-  width: 100%;
-  background: #59A8DC;
-  color: white;
-  padding: 20px 0;
-  transition: background .2s ease;
-  font-size: 20px;
-  border: 1px solid #559ECF;
-}
-
-/* line 43, ../scss/_base.scss */
-button.save:hover {
-  background: #559ECF;
-}
-
-/* line 46, ../scss/_base.scss */
-button.entry {
-  background: white;
-  border: 1px solid #EEE;
-  color: #59A8DC;
-  padding: 5px 10px;
-  margin: 0 10px;
-  transition: background .2s ease;
-}
-
-/* line 54, ../scss/_base.scss */
-button.entry:first-of-type {
-  margin: 0 10px 0 0;
-}
-
-/* line 57, ../scss/_base.scss */
-button.entry:hover {
-  background: #F5F5F5;
-}
-
-/* line 60, ../scss/_base.scss */
 .entry-content {
   position: relative;
   margin-top: 25px;
 }
 
-/* line 64, ../scss/_base.scss */
-button.edit {
-  background: #59A8DC;
-  border-radius: 100%;
-  position: absolute;
-  right: 50px;
-  top: 15px;
-  color: white;
-  transition: background .2s ease;
-  border: 1px solid #559ECF;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 0;
-  font-size: 1em;
-}
-
-/* line 79, ../scss/_base.scss */
-button.edit:hover {
-  background: #559ECF;
-}
-
-/* line 82, ../scss/_base.scss */
-button.close {
-  background: #59A8DC;
-  border-radius: 100%;
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  color: white;
-  transition: background .2s ease;
-  border: 1px solid #559ECF;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 0;
-}
-
-/* line 96, ../scss/_base.scss */
-button.close:hover {
-  background: #559ECF;
-}
-
-/* line 99, ../scss/_base.scss */
-button.delete {
-  background: #FC6168;
-  border: none;
-  color: white;
-  padding: 6px 8px 4px 8px;
-  font-size: 10px;
-  transition: background .2s ease;
-  letter-spacing: .125em;
-}
-
-/* line 108, ../scss/_base.scss */
-button.delete:hover {
-  background: #943D46;
-}
-
-/* line 111, ../scss/_base.scss */
+/* line 34, ../scss/_base.scss */
 .save-alert {
   width: 100%;
   text-align: center;

@@ -1,0 +1,75 @@
+/******************************************************************
+BUTTONS - FOR CLICKING 
+******************************************************************/
+
+button.save {
+  width: 100%;
+  background: $blue;
+  color: white;
+  padding: 20px 0;
+  transition: background .2s ease;
+  font-size: 20px;
+  border: 1px solid darken($blue, 10%);
+  &:hover {
+    background: darken($blue, 10%);
+  }
+  &[disabled] {
+    background:#CCC;
+    border: 1px solid #BBB;
+  }
+}
+
+button.entry {
+  background: white;
+  border: 1px solid $lt-grey;
+  color: $blue;
+  padding: 5px 10px;
+  margin: 0 10px;
+  transition: background .2s ease;
+  &:first-of-type {
+    margin: 0 10px 0 0;
+  }
+  &:hover {
+    background: $background;
+  }
+}
+
+%circle {
+  background: $blue;
+  border-radius: 100%;
+  position: absolute;
+  color: white;
+  transition: background .2s ease;
+  border: 1px solid darken($blue, 10%);
+  text-align: center;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  &:hover {
+    background: darken($blue, 10%);
+  }
+}
+
+button.edit {
+  right: 50px;
+  top: 15px;
+  @extend %circle;
+}
+button.close {
+  right: 15px;
+  top: 15px;
+  @extend %circle;
+}
+
+button.delete {
+  background: $red;
+  border: none;
+  color: white;
+  padding: 6px 8px 4px 8px;
+  font-size: 10px;
+  transition: background .2s ease;
+  letter-spacing: .125em;
+  &:hover {
+    background: darken($red, 10%);
+  }
+}
