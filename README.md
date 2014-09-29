@@ -1,6 +1,6 @@
 # LocalBook
 
-Text styling functionality provided via [jquery-notebook](https://github.com/raphaelcruzeiro/jquery-notebook)
+Text styling functionality provided via [jquery-notebook](https://github.com/raphaelcruzeiro/jquery-notebook)  
 Structure and Grunt boilerplate stuff via [Bread Pudding](https://github.com/VCUarts/bp)
 
 ## Demo: 
