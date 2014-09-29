@@ -1,6 +1,10 @@
 # LocalBook
 
 Text styling functionality provided via [jquery-notebook](https://github.com/raphaelcruzeiro/jquery-notebook)
+Structure and Grunt boilerplate stuff via [Bread Pudding](https://github.com/VCUarts/bp)
+
+## Demo: 
+Live demo is located [here](http://backpacklab.me/notebook/)
 
 ## How To: 
 ```bash
