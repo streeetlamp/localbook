@@ -63,7 +63,7 @@
       ($editor).empty();
       // set up some vars
       var k = $(this).attr('value'),
-      restore = localStorage.getItem(k);
+      restore = localStorage.getItem[k];
       // restore editor and title content using those vars
       ($editor).append(restore);
       ($textTitle).val(k);
@@ -75,12 +75,21 @@
       $(this).parent().remove();
     });
 
-    // permanently delete the entry if you click delete
+    // move localStorage to sessionStorage if you click delete
     ($saved).on('click', '.delete', function() {
       $(this).parent().remove();
       var k = $(this).attr('value');
-      localStorage.removeItem(k);
+      sessionStorage[k] = localStorage.getItem[k];
+      localStorage.removeItem[k];
       refreshList();
+      $('body').append('<button class="undo" value="'+k+'">&#10226; UNDO</button>');
+    });
+
+    $('body').on('click', '.undo', function() {
+      var k = $(this).attr('value');
+      localStorage[k] = sessionStorage.getItem[k];
+      refreshList();
+      $(this).remove();
     });
 
     // create and download a PDF if you click on pdf button

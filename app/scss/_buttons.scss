@@ -91,3 +91,11 @@ button.pdf {
     background: darken($blue, 10%);
   }
 }
+
+button.undo {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  background: white;
+  @extend %topbtn;
+}

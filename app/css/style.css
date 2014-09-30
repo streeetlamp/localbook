@@ -681,7 +681,7 @@ button.entry-btn:hover {
 }
 
 /* line 37, ../scss/_buttons.scss */
-button.edit, button.close {
+button.edit, button.close, button.undo {
   background: transparent;
   position: absolute;
   color: #59A8DC;
@@ -694,7 +694,7 @@ button.edit, button.close {
   top: 20px;
 }
 /* line 48, ../scss/_buttons.scss */
-button.edit:hover, button.close:hover {
+button.edit:hover, button.close:hover, button.undo:hover {
   background: #59A8DC;
   color: white;
 }
@@ -743,6 +743,14 @@ button.pdf {
 /* line 90, ../scss/_buttons.scss */
 button.pdf:hover {
   background: #2f92d3;
+}
+
+/* line 95, ../scss/_buttons.scss */
+button.undo {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  background: white;
 }
 
 /******************************************************************
