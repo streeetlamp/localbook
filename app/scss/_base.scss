@@ -2,38 +2,59 @@
 STYLIN ON U
 ******************************************************************/
 
-
 html {
   background: $background;
 }
 body {
   max-width: 650px;
   margin: 0 auto;
+  margin-top: 80px;
 }
 
 .site-title {
-  margin-top: 60px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 7px 15px;
+  color: $purp;
+  font-size: 22px;
+  font-weight: 600;
+  background: $lt-grey;
+  width: 100%;
 }
 
-.editor, .entry-content {
+.saved-title {
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 3px solid $lt-grey;
+}
+
+.editor, .entry {
   background: white;
-  padding: 10px 20px;
-  border: 1px solid $lt-grey;
+  padding: 20px;
   border-radius: 2px;
 }
-.saved-title {
-  margin-top: 60px;
+.editor {
+  border: 1px solid $blue;
 }
-.text-title {
-  width: 100%;
-  border: 1px solid $lt-grey;
-  box-sizing: border-box;
-  padding: 20px 10px;
+.title-save {
+  overflow: hidden;
   margin-top: 40px;
 }
-.entry-content {
+.text-title {
+  width: 80%;
+  float: left;
+  border: 0;
+  box-sizing: border-box;
+  padding: 15px 10px;
+}
+.entry {
   position: relative;
   margin-top: 25px;
+  padding-bottom: 65px;
+  h3 {
+    margin-top: 0;
+  }
 }
 .save-alert {
   width: 100%;
@@ -45,4 +66,13 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.entry-opts {
+  background: $lt-grey;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 50px;
 }

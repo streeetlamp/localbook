@@ -987,17 +987,17 @@ t.events.push(["addFonts",function(t){var e,n,i,o,a,u="Unicode";for(n in t.fonts
 
       for(var i=0, len=localStorage.length; i<len; i++) {
         var key = localStorage.key(i);
-        ($saved).append('<button class="entry" value="'+key+'">'+key+'</button>');
+        ($saved).append('<button class="entry-btn" value="'+key+'">'+key+'</button>');
       }
     }
     refreshList();
 
     // display an entry if you click its button
-    ($saved).on('click', '.entry', function() {
+    ($saved).on('click', '.entry-btn', function() {
       var k = $(this).html();
       var content = localStorage[k];
 
-      ($saved).append('<div class="entry-content"><button class="edit" value="'+k+'">&#9999;</button><button class="close">&times;</button>'+content+'<button class="delete" value="'+k+'">&#9447; DELETE</button><button class="pdf">&#9660; PDF</button></div>');
+      ($saved).append('<div class="entry"><button class="edit" value="'+k+'">&#9999; EDIT</button><button class="close">&#10006;</button><div class="entry-content"><h3>'+k+'</h3>'+content+'</div><div class="entry-opts"><button class="delete" value="'+k+'">&#9447; DELETE</button><button class="pdf">&#9660; PDF</button></div></div>');
     });
 
     // restore entry to editor if you hit edit

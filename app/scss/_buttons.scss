@@ -3,23 +3,23 @@ BUTTONS - FOR CLICKING
 ******************************************************************/
 
 button.save {
-  width: 100%;
+  width: 20%;
   background: $blue;
   color: white;
-  padding: 20px 0;
+  padding: 15px 0;
   transition: background .2s ease;
-  font-size: 20px;
-  border: 1px solid darken($blue, 10%);
+  box-sizing: border-box;
+  float: right;
+  border: 0;
   &:hover {
     background: darken($blue, 10%);
   }
   &[disabled] {
     background:#CCC;
-    border: 1px solid #BBB;
   }
 }
 
-button.entry {
+button.entry-btn {
   background: white;
   border: 1px solid $lt-grey;
   color: $blue;
@@ -34,31 +34,30 @@ button.entry {
   }
 }
 
-%circle {
-  background: $blue;
-  border-radius: 100%;
+%topbtn {
+  background: transparent;
   position: absolute;
-  color: white;
-  transition: background .2s ease;
-  border: 1px solid darken($blue, 10%);
+  color: $blue;
+  transition: background .2s ease, color .2s ease;
+  border: 1px solid $blue;
   text-align: center;
-  padding: 0;
-  width: 30px;
-  height: 30px;
+  padding: 2px 7px;
+  font-size: 10px;
+  letter-spacing: .125em;
+  top: 20px;
   &:hover {
-    background: darken($blue, 10%);
+    background: $blue;
+    color: white;
   }
 }
 
 button.edit {
   right: 50px;
-  top: 15px;
-  @extend %circle;
+  @extend %topbtn;
 }
 button.close {
   right: 15px;
-  top: 15px;
-  @extend %circle;
+  @extend %topbtn;
 }
 
 button.delete {
@@ -69,6 +68,9 @@ button.delete {
   font-size: 10px;
   transition: background .2s ease;
   letter-spacing: .125em;
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
   &:hover {
     background: darken($red, 10%);
   }
