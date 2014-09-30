@@ -8,10 +8,13 @@
 
 		// define some ambiguously named variables
 		var $save = $('.save'),
-			$saved = $('.saved');
+			$saved = $('.saved'),
+      $textTitle = $('.text-title'),
+      $editor = $('.editor'),
+      $saveAlert = $('.save-alert');
 
 		// init jquery.notebook.js plugin
-    $('.editor').notebook({
+    ($editor).notebook({
         autoFocus: true,
         placeholder: 'Type something awesome...'
     });
@@ -22,9 +25,10 @@
       localStorage[title] = document.querySelector('.editor').innerHTML;
       // refresh the list of entries
       refreshList();
+      ($saveAlert).slideDown().delay(1500).slideUp('slow');
     });
 	  // save button is disabled if title field is empty 
-    $('.text-title').on('input', function() {
+    ($textTitle).on('input', function() {
       if ($(this).val()) {
         ($save).attr('enabled', 'enabled').removeAttr('disabled');
       } else {
@@ -55,13 +59,13 @@
     ($saved).on('click', '.edit', function() {
       // close our preview, empty the editor input
       $(this).parent().remove();
-      $('.editor').empty();
+      ($editor).empty();
       // set up some vars
       var k = $(this).attr('value'),
       restore = localStorage.getItem(k);
       // restore editor and title content using those vars
-      $('.editor').append(restore);
-      $('.text-title').val(k);
+      ($editor).append(restore);
+      ($textTitle).val(k);
       ($save).attr('enabled', 'enabled').removeAttr('disabled');
     });
     // close the entry if you hit close

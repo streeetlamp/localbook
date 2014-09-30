@@ -9,8 +9,12 @@ html {
 body {
   max-width: 650px;
   margin: 0 auto;
-  margin-top: 40px;
 }
+
+.site-title {
+  margin-top: 60px;
+}
+
 .editor, .entry-content {
   background: white;
   padding: 10px 20px;
@@ -38,4 +42,7 @@ body {
   padding: 10px 0;
   color: white;
   display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

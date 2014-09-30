@@ -737,10 +737,14 @@ html {
 body {
   max-width: 650px;
   margin: 0 auto;
-  margin-top: 40px;
 }
 
 /* line 14, ../scss/_base.scss */
+.site-title {
+  margin-top: 60px;
+}
+
+/* line 18, ../scss/_base.scss */
 .editor, .entry-content {
   background: white;
   padding: 10px 20px;
@@ -748,12 +752,12 @@ body {
   border-radius: 2px;
 }
 
-/* line 20, ../scss/_base.scss */
+/* line 24, ../scss/_base.scss */
 .saved-title {
   margin-top: 60px;
 }
 
-/* line 23, ../scss/_base.scss */
+/* line 27, ../scss/_base.scss */
 .text-title {
   width: 100%;
   border: 1px solid #EEE;
@@ -762,13 +766,13 @@ body {
   margin-top: 40px;
 }
 
-/* line 30, ../scss/_base.scss */
+/* line 34, ../scss/_base.scss */
 .entry-content {
   position: relative;
   margin-top: 25px;
 }
 
-/* line 34, ../scss/_base.scss */
+/* line 38, ../scss/_base.scss */
 .save-alert {
   width: 100%;
   text-align: center;
@@ -776,4 +780,7 @@ body {
   padding: 10px 0;
   color: white;
   display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
