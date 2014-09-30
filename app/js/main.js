@@ -1007,7 +1007,7 @@ t.events.push(["addFonts",function(t){var e,n,i,o,a,u="Unicode";for(n in t.fonts
       ($editor).empty();
       // set up some vars
       var k = $(this).attr('value'),
-      restore = localStorage.getItem[k];
+      restore = localStorage.getItem(k);
       // restore editor and title content using those vars
       ($editor).append(restore);
       ($textTitle).val(k);
@@ -1023,15 +1023,15 @@ t.events.push(["addFonts",function(t){var e,n,i,o,a,u="Unicode";for(n in t.fonts
     ($saved).on('click', '.delete', function() {
       $(this).parent().remove();
       var k = $(this).attr('value');
-      sessionStorage[k] = localStorage.getItem[k];
-      localStorage.removeItem[k];
+      sessionStorage[k] = localStorage.getItem(k);
+      localStorage.removeItem(k);
       refreshList();
       $('body').append('<button class="undo" value="'+k+'">&#10226; UNDO</button>');
     });
 
     $('body').on('click', '.undo', function() {
       var k = $(this).attr('value');
-      localStorage[k] = sessionStorage.getItem[k];
+      localStorage[k] = sessionStorage.getItem(k);
       refreshList();
       $(this).remove();
     });
