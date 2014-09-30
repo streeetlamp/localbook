@@ -725,6 +725,24 @@ button.delete:hover {
   background: #fb2f38;
 }
 
+/* line 77, ../scss/_buttons.scss */
+button.pdf {
+  background: #59A8DC;
+  border: none;
+  color: white;
+  padding: 6px 8px 4px 8px;
+  font-size: 10px;
+  transition: background .2s ease;
+  letter-spacing: .125em;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
+/* line 88, ../scss/_buttons.scss */
+button.pdf:hover {
+  background: #2f92d3;
+}
+
 /******************************************************************
 STYLIN ON U
 ******************************************************************/

@@ -73,3 +73,19 @@ button.delete {
     background: darken($red, 10%);
   }
 }
+
+button.pdf {
+  background: $blue;
+  border: none;
+  color: white;
+  padding: 6px 8px 4px 8px;
+  font-size: 10px;
+  transition: background .2s ease;
+  letter-spacing: .125em;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  &:hover {
+    background: darken($blue, 10%);
+  }
+}

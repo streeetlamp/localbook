@@ -27,6 +27,7 @@
       refreshList();
       ($saveAlert).slideDown().delay(1500).slideUp('slow');
     });
+
 	  // save button is disabled if title field is empty 
     ($textTitle).on('input', function() {
       if ($(this).val()) {
@@ -52,7 +53,7 @@
       var k = $(this).html();
       var content = localStorage[k];
 
-      ($saved).append('<div class="entry-content"><button class="edit" value="'+k+'">&#9999;</button><button class="close">&times;</button>'+content+'<button class="delete" value="'+k+'">&#9447; DELETE</button></div>');
+      ($saved).append('<div class="entry-content"><button class="edit" value="'+k+'">&#9999;</button><button class="close">&times;</button>'+content+'<button class="delete" value="'+k+'">&#9447; DELETE</button><button class="pdf">&#9660; PDF</button></div>');
     });
 
     // restore entry to editor if you hit edit
@@ -68,16 +69,29 @@
       ($textTitle).val(k);
       ($save).attr('enabled', 'enabled').removeAttr('disabled');
     });
+
     // close the entry if you hit close
     ($saved).on('click', '.close', function() {
       $(this).parent().remove();
     });
+
     // permanently delete the entry if you click delete
     ($saved).on('click', '.delete', function() {
       $(this).parent().remove();
       var k = $(this).attr('value');
       localStorage.removeItem(k);
       refreshList();
+    });
+
+    // create and download a PDF if you click on pdf button
+    var doc = new jsPDF();
+
+    ($saved).on('click', '.pdf', function() {
+      doc.fromHTML($('.entry-content').get(0), 15, 15, {
+        'width': 170 
+    });
+
+      doc.save('Test.pdf');
     });
 
 	});
