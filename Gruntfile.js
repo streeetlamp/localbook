@@ -57,7 +57,7 @@ module.exports = function(grunt) {
         autoprefixer: {
             dist: {
                 files: {
-                    'build/css/style.css' : 'app/css/style.css'
+                  'build/css/style.css' : 'app/css/style.css'
                 }
             }
         },
@@ -175,20 +175,6 @@ module.exports = function(grunt) {
           }
         },
 
-        replace: {
-          example: {
-            src: ['app/css/style.css',],             // source files array (supports minimatch)
-            dest: 'app/css/style.t4.css',             // destination directory or file
-            replacements: [{
-              from: '../img/logo-b-l.png',                   // string replacement
-              to: '<t4 type="media" id="90325" formatter="image/*"/>'
-            },{
-              from: '../img/logo-b-s.png',                   // string replacement
-              to: '<t4 type="media" id="90320" formatter="image/*"/>'
-            }]
-          }
-        },
-
         concurrent: {
             watch: {
                 tasks: ['watch', 'compass', 'browserSync'],
@@ -238,8 +224,4 @@ module.exports = function(grunt) {
 
     // cleans directories, does everything for css, js, and images for deploy
     grunt.registerTask('prod', ['includes','imagemin', 'compass:dist', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify','includes:build','devcode:dist','htmlmin']);
-
-    // T4 template tags
-    grunt.registerTask('t4', ['grunt-text-replace']);
-
 };
