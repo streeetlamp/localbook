@@ -11,7 +11,7 @@
     "grunt-browser-sync": "latest",
     "grunt-combine-media-queries": "latest",
     "grunt-concurrent": "latest",
-    "grunt-contrib-compass": "latest",
+    "grunt-sass": "latest",
     "grunt-contrib-concat": "latest",
     "grunt-contrib-cssmin": "latest",
     "grunt-contrib-htmlmin": "latest",

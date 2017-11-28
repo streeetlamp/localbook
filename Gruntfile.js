@@ -4,24 +4,27 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        compass: {
-          dist: {
+        // Grunt-sass 
+        sass: {
+            app: {
+              files: [{
+                expand: true,
+                cwd: 'app/scss',
+                src: ['*.scss'],
+                dest: 'app/css',
+                ext: '.css'
+              }]
+            },
             options: {
-              cssDir: 'app/css',
-              sassDir: 'app/scss',
-              environment: 'development',
-              relativeAssets: true,
-              outputStyle: 'expanded',
-              raw: 'preferred_syntax = :scss\n',
-              require: ['susy','breakpoint']
+              sourceMap: false, 
+              outputStyle: 'nested', 
             }
-          }
-        },
+          },
 
         watch: {
             scss: {
               files: ['app/scss/**/*.scss'],
-              tasks: ['compass']
+              tasks: ['sass']
             },
             css: {
                 files: ['app/css/**/*.css']
@@ -190,7 +193,7 @@ module.exports = function(grunt) {
     // 3. Where we tell Grunt we plan to use this plug-in.
 
     // Sass
-    grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-combine-media-queries');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
