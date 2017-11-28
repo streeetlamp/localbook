@@ -180,7 +180,7 @@ module.exports = function(grunt) {
 
         concurrent: {
             watch: {
-                tasks: ['watch', 'compass', 'browserSync'],
+                tasks: ['watch', 'sass', 'browserSync'],
                 options: {
                     logConcurrentOutput: true
                 }
