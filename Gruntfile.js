@@ -4,24 +4,27 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        compass: {
-          dist: {
+        // Grunt-sass 
+        sass: {
+            app: {
+              files: [{
+                expand: true,
+                cwd: 'app/scss',
+                src: ['*.scss'],
+                dest: 'app/css',
+                ext: '.css'
+              }]
+            },
             options: {
-              cssDir: 'app/css',
-              sassDir: 'app/scss',
-              environment: 'development',
-              relativeAssets: true,
-              outputStyle: 'expanded',
-              raw: 'preferred_syntax = :scss\n',
-              require: ['susy','breakpoint']
+              sourceMap: false, 
+              outputStyle: 'nested', 
             }
-          }
-        },
+          },
 
         watch: {
             scss: {
               files: ['app/scss/**/*.scss'],
-              tasks: ['compass']
+              tasks: ['sass']
             },
             css: {
                 files: ['app/css/**/*.css']
@@ -57,7 +60,7 @@ module.exports = function(grunt) {
         autoprefixer: {
             dist: {
                 files: {
-                    'build/css/style.css' : 'app/css/style.css'
+                  'build/css/style.css' : 'app/css/style.css'
                 }
             }
         },
@@ -175,23 +178,9 @@ module.exports = function(grunt) {
           }
         },
 
-        replace: {
-          example: {
-            src: ['app/css/style.css',],             // source files array (supports minimatch)
-            dest: 'app/css/style.t4.css',             // destination directory or file
-            replacements: [{
-              from: '../img/logo-b-l.png',                   // string replacement
-              to: '<t4 type="media" id="90325" formatter="image/*"/>'
-            },{
-              from: '../img/logo-b-s.png',                   // string replacement
-              to: '<t4 type="media" id="90320" formatter="image/*"/>'
-            }]
-          }
-        },
-
         concurrent: {
             watch: {
-                tasks: ['watch', 'compass', 'browserSync'],
+                tasks: ['watch', 'sass', 'browserSync'],
                 options: {
                     logConcurrentOutput: true
                 }
@@ -204,7 +193,7 @@ module.exports = function(grunt) {
     // 3. Where we tell Grunt we plan to use this plug-in.
 
     // Sass
-    grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-combine-media-queries');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -238,8 +227,4 @@ module.exports = function(grunt) {
 
     // cleans directories, does everything for css, js, and images for deploy
     grunt.registerTask('prod', ['includes','imagemin', 'compass:dist', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify','includes:build','devcode:dist','htmlmin']);
-
-    // T4 template tags
-    grunt.registerTask('t4', ['grunt-text-replace']);
-
 };
