@@ -6,7 +6,7 @@
     "url": "git://github.com/luetkemj/bp.git"
   },
   "devDependencies": {
-    "grunt": "",
+    "grunt": "latest",
     "grunt-autoprefixer": "latest",
     "grunt-browser-sync": "latest",
     "grunt-combine-media-queries": "latest",
@@ -22,5 +22,8 @@
     "grunt-devcode": "latest",
     "grunt-includes": "latest",
     "grunt-text-replace": "latest"
+  },
+  "dependencies": {
+    "npm-check-updates": "^2.13.0"
   }
 }
