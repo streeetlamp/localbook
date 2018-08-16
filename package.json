@@ -24,6 +24,6 @@
     "grunt-text-replace": "latest"
   },
   "dependencies": {
-    "npm-check-updates": "^2.13.0"
+    "npm-check-updates": "latest"
   }
 }
