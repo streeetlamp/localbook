@@ -21,7 +21,8 @@
     "grunt-contrib-watch": "latest",
     "grunt-devcode": "latest",
     "grunt-includes": "latest",
-    "grunt-text-replace": "latest"
+    "grunt-text-replace": "latest",
+    "npm": "latest"
   },
   "dependencies": {
     "npm-check-updates": "latest"
