@@ -8,7 +8,6 @@ Live demo is located [here](http://backpacklab.me/localbook/)
 
 ## How To: 
 ```bash
-bundle install
 npm install
 grunt
 ```
